@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Sen';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/sen0.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Sen';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/assets/sen1.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Sen';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(/assets/sen2.woff2) format('truetype');
+}
