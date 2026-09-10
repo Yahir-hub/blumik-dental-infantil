@@ -8,6 +8,7 @@ import {
   mapsUrl,
   siteConfig,
   wazeUrl,
+  whatsappMessageForPath,
   whatsappUrl,
 } from './site-config';
 import { dimensionsFor } from './image-data';
@@ -23,15 +24,14 @@ const links = [
 
 export function CTA({
   children = '¡Contáctanos!',
-  message,
 }: {
   children?: React.ReactNode;
-  message?: string;
 }) {
+  const path = usePathname();
   return (
     <a
       className="cta"
-      href={whatsappUrl(message)}
+      href={whatsappUrl(whatsappMessageForPath(path))}
       target="_blank"
       rel="noreferrer"
     >
@@ -151,9 +151,7 @@ export function Header() {
       </nav>
       <a
         className="mobile-whatsapp-float"
-        href={whatsappUrl(
-          'Hola, me gustaría solicitar información para agendar una cita en Blümik.',
-        )}
+        href={whatsappUrl(whatsappMessageForPath(path))}
         target="_blank"
         rel="noreferrer"
         aria-label="Contactar a Blümik por WhatsApp"
@@ -284,15 +282,14 @@ export function Hero({
           <small>{subtitle}</small>
         </h1>
         <p>{description}</p>
-        <CTA message={`Hola, me gustaría ${button.toLowerCase()} en Blümik.`}>
-          {button}
-        </CTA>
+        <CTA>{button}</CTA>
       </div>
     </section>
   );
 }
 
 export function LocationSection({ className = '' }: { className?: string }) {
+  const path = usePathname();
   return (
     <section className={`location-section wide ${className}`}>
       <div className="location-copy" data-reveal data-reveal-direction="left">
@@ -319,9 +316,7 @@ export function LocationSection({ className = '' }: { className?: string }) {
           <p>
             <strong>WhatsApp:</strong>{' '}
             <a
-              href={whatsappUrl(
-                'Hola, me gustaría solicitar información para agendar una cita en Blümik.',
-              )}
+              href={whatsappUrl(whatsappMessageForPath(path))}
               target="_blank"
               rel="noreferrer"
             >
@@ -352,6 +347,7 @@ export function LocationSection({ className = '' }: { className?: string }) {
 }
 
 export function Footer() {
+  const path = usePathname();
   const footerLinks = [
     ['/servicios', 'Servicios'],
     ['/pacientes-neurodivergentes', 'Atención neurodivergente'],
@@ -390,9 +386,7 @@ export function Footer() {
           <p>{siteConfig.address}</p>
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
           <a
-            href={whatsappUrl(
-              'Hola, me gustaría solicitar información en Blümik.',
-            )}
+            href={whatsappUrl(whatsappMessageForPath(path))}
             target="_blank"
             rel="noreferrer"
           >

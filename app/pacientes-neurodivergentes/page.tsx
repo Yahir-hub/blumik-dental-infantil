@@ -119,9 +119,7 @@ export default function Neuro() {
             </ul>
           </div>
           <div className="hospital-action" data-reveal>
-            <CTA message="Hola, me gustaría agendar una valoración para conocer la opción de anestesia general hospitalaria en Blümik.">
-              Agendar una valoración
-            </CTA>
+            <CTA>Agendar una valoración</CTA>
             <p>Conoce si esta alternativa es adecuada para tu pequeño.</p>
           </div>
         </div>

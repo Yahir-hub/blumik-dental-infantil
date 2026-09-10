@@ -40,8 +40,17 @@ export const mapsEmbedUrl =
 export const wazeUrl =
   'https://waze.com/ul?q=' + encodeURIComponent(siteConfig.address);
 
-export function whatsappUrl(
-  message = 'Hola, me gustaría solicitar información sobre una valoración odontopediátrica.',
-) {
+export const whatsappMessages = {
+  general: `Hola, estuve revisando el sitio web de Blümik Odontopediatría de Alto Nivel y me gustaría recibir información para agendar una valoración.\n\n${siteConfig.url}`,
+  neuro: `Hola, estuve revisando la sección de atención a pacientes neurodivergentes en el sitio web de Blümik. Tengo un paciente neurodivergente y me gustaría recibir información sobre su enfoque de atención adaptada y agendar una valoración.\n\n${siteConfig.url}/pacientes-neurodivergentes`,
+} as const;
+
+export function whatsappMessageForPath(pathname: string) {
+  return pathname.startsWith('/pacientes-neurodivergentes')
+    ? whatsappMessages.neuro
+    : whatsappMessages.general;
+}
+
+export function whatsappUrl(message: string = whatsappMessages.general) {
   return `https://wa.me/${siteConfig.phoneInternational}?text=${encodeURIComponent(message)}`;
 }
