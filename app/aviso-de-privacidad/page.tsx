@@ -15,7 +15,7 @@ export default function PrivacyNotice() {
         <span className="eyebrow">Protección de datos</span>
         <h1>Aviso de privacidad integral</h1>
         <p className="privacy-updated">
-          Última actualización: 9 de septiembre de 2026.
+          Última actualización: 10 de septiembre de 2026.
         </p>
 
         <p>
@@ -120,12 +120,21 @@ export default function PrivacyNotice() {
           correspondientes.
         </p>
 
-        <h2>Cookies y enlaces externos</h2>
+        <h2>Cookies, medición y enlaces externos</h2>
         <p>
           El sitio puede cargar servicios externos, como mapas, WhatsApp,
           Facebook e Instagram. Al abrirlos, sus proveedores pueden tratar datos
-          conforme a sus propios avisos. Este sitio no utiliza cookies
-          publicitarias propias mientras no se indique lo contrario.
+          conforme a sus propios avisos.
+        </p>
+        <p>
+          Con tu consentimiento utilizamos Google Analytics para medir visitas,
+          páginas consultadas e interacciones generales, como clics en enlaces
+          de contacto. Esta información nos ayuda a comprender el uso del sitio
+          y mejorar su contenido. La medición permanece desactivada si eliges
+          “Solo necesarias”. Google puede tratar identificadores en línea e
+          información técnica del dispositivo conforme a su propia política de
+          privacidad. No activamos funciones publicitarias ni enviamos a Google
+          los datos escritos en el formulario de contacto.
         </p>
 
         <h2>Cambios al aviso</h2>

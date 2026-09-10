@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { siteConfig } from '../site-config';
+import { trackAnalyticsEvent } from '../analytics';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
@@ -48,6 +49,7 @@ export default function ContactForm() {
       }
 
       formRef.current?.reset();
+      trackAnalyticsEvent('generate_lead', { lead_source: 'contact_form' });
       setStatus('success');
     } catch {
       setStatus('error');

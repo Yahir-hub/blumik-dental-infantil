@@ -6,6 +6,7 @@ import { Header, Footer } from './shared';
 import { VisualEffects } from './motion';
 import { businessJsonLd, seoDescriptions } from './seo';
 import { siteConfig } from './site-config';
+import { AnalyticsConsent } from './analytics';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -70,6 +71,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <AnalyticsConsent />
       </body>
     </html>
   );
