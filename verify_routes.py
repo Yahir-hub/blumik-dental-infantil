@@ -1,6 +1,6 @@
 import urllib.request,pathlib,re,concurrent.futures
 root='http://localhost:3001'
-paths=['/','/servicios','/pacientes-neurodivergentes','/preguntas-frecuentes','/contacto','/store']
+paths=['/','/servicios','/pacientes-neurodivergentes','/preguntas-frecuentes','/contacto']
 def check(p):
  r=urllib.request.urlopen(root+p);s=r.read().decode();return (p,r.status,len(s))
 with concurrent.futures.ThreadPoolExecutor(max_workers=4) as ex:

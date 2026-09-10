@@ -1,5 +1,7 @@
 # dependencies
 /node_modules
+/.npm-cache/
+/.qa/
 /.pnp
 .pnp.*
 .yarn/*

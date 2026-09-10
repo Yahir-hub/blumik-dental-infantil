@@ -1,5 +1,137 @@
 'use client';
-import {useState} from 'react';
-import {Input} from '@/components/ui/input';
-import {Textarea} from '@/components/ui/textarea';
-export default function ContactForm(){const[notice,setNotice]=useState('');return <form className="contact-form" onSubmit={e=>{e.preventDefault();const d=new FormData(e.currentTarget);const body=`Nombre: ${d.get('nombre')}\nCorreo: ${d.get('correo')}\nTeléfono: ${d.get('telefono')}\n\n${d.get('mensaje')}`;window.location.href='mailto:paolagonzalez.odontopediatra@gmail.com?subject='+encodeURIComponent('Consulta desde Blümik')+'&body='+encodeURIComponent(body);setNotice('Se abrirá tu aplicación de correo para revisar y enviar el mensaje.');}}><h3>Contáctenos</h3><label htmlFor="nombre">Nombre:</label><Input id="nombre" name="nombre" autoComplete="name" required/><label htmlFor="correo">Correo:</label><Input id="correo" type="email" name="correo" autoComplete="email" required/><label htmlFor="telefono">Teléfono</label><Input id="telefono" type="tel" name="telefono" autoComplete="tel" required/><label htmlFor="mensaje">Mensaje:</label><Textarea id="mensaje" name="mensaje" required/><button className="send" type="submit">Enviar</button>{notice&&<p role="status" className="form-status">{notice}</p>}</form>}
+
+import { useRef, useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { siteConfig } from '../site-config';
+
+type Status = 'idle' | 'sending' | 'success' | 'error';
+
+export default function ContactForm() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<Status>('idle');
+
+  async function submitForm(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+
+    const honey = data.get('_honey');
+    if (typeof honey === 'string' && honey.trim()) return;
+
+    setStatus('sending');
+    try {
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${siteConfig.email}`,
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          signal: AbortSignal.timeout(15000),
+          body: JSON.stringify({
+            _subject: 'Nueva consulta desde el sitio web de Blümik',
+            _template: 'table',
+            _honey: '',
+            nombre: data.get('nombre'),
+            email: data.get('correo'),
+            telefono: data.get('telefono'),
+            mensaje: data.get('mensaje'),
+          }),
+        },
+      );
+
+      if (!response.ok) throw new Error('No se pudo enviar el formulario.');
+      const result = (await response.json()) as { success?: string | boolean };
+      if (result.success === false || result.success === 'false') {
+        throw new Error('El servicio rechazó el formulario.');
+      }
+
+      formRef.current?.reset();
+      setStatus('success');
+    } catch {
+      setStatus('error');
+    }
+  }
+
+  return (
+    <form ref={formRef} className="contact-form" onSubmit={submitForm}>
+      <div className="form-heading">
+        <span>Escríbenos</span>
+        <h3>Contáctenos</h3>
+        <p>
+          Completa tus datos y el mensaje llegará directamente al correo de
+          Blümik.
+        </p>
+      </div>
+      <div className="form-honeypot" aria-hidden="true">
+        <label htmlFor="website">Sitio web</label>
+        <input
+          id="website"
+          name="_honey"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+      <label htmlFor="nombre">Nombre</label>
+      <Input
+        id="nombre"
+        name="nombre"
+        autoComplete="name"
+        placeholder="Nombre completo"
+        maxLength={100}
+        required
+      />
+      <label htmlFor="correo">Correo electrónico</label>
+      <Input
+        id="correo"
+        type="email"
+        name="correo"
+        autoComplete="email"
+        placeholder="nombre@correo.com"
+        maxLength={150}
+        required
+      />
+      <label htmlFor="telefono">Teléfono</label>
+      <Input
+        id="telefono"
+        type="tel"
+        name="telefono"
+        autoComplete="tel"
+        inputMode="tel"
+        placeholder="477 000 0000"
+        maxLength={25}
+        required
+      />
+      <label htmlFor="mensaje">Mensaje</label>
+      <Textarea
+        id="mensaje"
+        name="mensaje"
+        placeholder="Cuéntanos cómo podemos ayudarte"
+        maxLength={1500}
+        required
+      />
+      <p className="form-helper">
+        Evita incluir diagnósticos, expedientes o datos médicos sensibles en
+        este formulario.
+      </p>
+      <label className="privacy-consent" htmlFor="privacidad">
+        <input id="privacidad" name="privacidad" type="checkbox" required />
+        <span>
+          He leído y acepto el{' '}
+          <a href="/aviso-de-privacidad">aviso de privacidad</a>.
+        </span>
+      </label>
+      <button className="send" type="submit" disabled={status === 'sending'}>
+        {status === 'sending' ? 'Enviando…' : 'Enviar mensaje'}
+      </button>
+      <output className="form-status" aria-live="polite">
+        {status === 'success' &&
+          'Gracias. Tu mensaje fue enviado correctamente a Blümik.'}
+        {status === 'error' &&
+          'No pudimos enviar el mensaje. Inténtalo de nuevo o contáctanos por WhatsApp.'}
+      </output>
+    </form>
+  );
+}
