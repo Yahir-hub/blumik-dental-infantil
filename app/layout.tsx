@@ -22,12 +22,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/assets/favicon-mascota.png',
+        url: '/assets/favicon-blumik.png',
         type: 'image/png',
         sizes: '512x512',
       },
     ],
-    apple: '/assets/favicon-mascota.png',
+    apple: '/assets/favicon-blumik.png',
   },
   description: seoDescriptions.home,
   applicationName: siteConfig.name,
