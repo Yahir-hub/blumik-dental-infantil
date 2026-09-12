@@ -14,9 +14,16 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: 'es-MX',
     icons: [
       {
-        src: '/assets/simbolo.png',
-        sizes: 'any',
+        src: '/assets/favicon-mascota.png',
+        sizes: '512x512',
         type: 'image/png',
+        purpose: 'any',
+      },
+      {
+        src: '/assets/favicon-mascota.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'maskable',
       },
     ],
   };

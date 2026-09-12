@@ -19,7 +19,16 @@ export const metadata: Metadata = {
     default: 'Odontopediatra en León, Guanajuato | Blümik',
     template: '%s | Blümik',
   },
-  icons: { icon: '/assets/simbolo.png' },
+  icons: {
+    icon: [
+      {
+        url: '/assets/favicon-mascota.png',
+        type: 'image/png',
+        sizes: '512x512',
+      },
+    ],
+    apple: '/assets/favicon-mascota.png',
+  },
   description: seoDescriptions.home,
   applicationName: siteConfig.name,
   alternates: { canonical: '/' },
