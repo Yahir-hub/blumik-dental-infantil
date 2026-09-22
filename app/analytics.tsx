@@ -2,7 +2,6 @@
 
 /* eslint-disable react/react-compiler -- The browser-only Google tag callback is outside React's compilation model. */
 
-import Script from 'next/script';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState, useSyncExternalStore } from 'react';
 
@@ -16,6 +15,7 @@ declare global {
   interface Window {
     dataLayer: unknown[];
     gtag?: (...args: unknown[]) => void;
+    blumikAnalyticsConfigured?: boolean;
   }
 }
 
@@ -50,6 +50,49 @@ export function AnalyticsConsent() {
     getConsentServerSnapshot,
   );
   const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if (consent !== 'accepted') {
+      setReady(false);
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag =
+      window.gtag ||
+      ((...args: unknown[]) => {
+        window.dataLayer.push(args);
+      });
+
+    if (!window.blumikAnalyticsConfigured) {
+      window.gtag('consent', 'default', {
+        analytics_storage: 'granted',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId, {
+        send_page_view: false,
+        anonymize_ip: true,
+      });
+      window.blumikAnalyticsConfigured = true;
+    }
+
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      `script[src*="googletagmanager.com/gtag/js?id=${measurementId}"]`,
+    );
+
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      script.dataset.blumikAnalytics = 'true';
+      document.head.appendChild(script);
+    }
+
+    setReady(true);
+  }, [consent]);
 
   useEffect(() => {
     if (!ready || consent !== 'accepted') return;
@@ -106,31 +149,6 @@ export function AnalyticsConsent() {
 
   return (
     <>
-      {consent === 'accepted' && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
-            strategy="afterInteractive"
-            onLoad={() => {
-              window.dataLayer = window.dataLayer || [];
-              window.gtag = (...args: unknown[]) => window.dataLayer.push(args);
-              window.gtag('js', new Date());
-              window.gtag('consent', 'default', {
-                analytics_storage: 'granted',
-                ad_storage: 'denied',
-                ad_user_data: 'denied',
-                ad_personalization: 'denied',
-              });
-              window.gtag('config', measurementId, {
-                send_page_view: false,
-                anonymize_ip: true,
-              });
-              setReady(true);
-            }}
-          />
-        </>
-      )}
-
       {consent === null && (
         <aside
           className="analytics-consent"
