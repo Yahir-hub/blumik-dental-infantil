@@ -1,3 +1,4 @@
+import type { Media } from '@/lib/hyronix/types';
 import {
   Activity,
   Baby,
@@ -25,12 +26,14 @@ export function ServiceBlock({
   items,
   icon = 'diente',
   button,
+  buttonHref,
 }: {
   title: string;
   description?: string;
   items: string[];
   icon?: string;
   button?: string;
+  buttonHref?: string;
 }) {
   const Icon = serviceIcons[icon as keyof typeof serviceIcons] || SmilePlus;
   return (
@@ -42,7 +45,7 @@ export function ServiceBlock({
         <h3>{title}</h3>
         {description && <p>{description}</p>}
         <Checks items={items} />
-        {button && <CTA>{button}</CTA>}
+        {button && <CTA href={buttonHref}>{button}</CTA>}
       </div>
     </article>
   );
@@ -52,10 +55,12 @@ export function Split({
   description,
   items,
   photo,
+  media,
   missing,
   reverse = false,
   color = 'pink',
   button,
+  buttonHref,
   extra,
   carousel,
 }: {
@@ -63,12 +68,14 @@ export function Split({
   description: string;
   items?: string[];
   photo?: string;
+  media?: Media;
   missing?: string;
   reverse?: boolean;
   color?: string;
   button?: string;
+  buttonHref?: string;
   extra?: string;
-  carousel?: { src: string; alt: string }[];
+  carousel?: { src: string; alt: string; media?: Media }[];
 }) {
   return (
     <section className={'split ' + (reverse ? 'reverse ' : '') + color}>
@@ -76,7 +83,7 @@ export function Split({
         {carousel ? (
           <AutoCarousel images={carousel} />
         ) : photo ? (
-          <Photo src={photo} alt={title} />
+          <Photo src={photo} alt={title} media={media} />
         ) : (
           <Missing description={missing || title} />
         )}
@@ -86,7 +93,8 @@ export function Split({
         <h2>{title}</h2>
         <p>{description}</p>
         {extra && <p>{extra}</p>}
-        {items && <Checks items={items} />} {button && <CTA>{button}</CTA>}
+        {items && <Checks items={items} />}{' '}
+        {button && <CTA href={buttonHref}>{button}</CTA>}
       </div>
     </section>
   );

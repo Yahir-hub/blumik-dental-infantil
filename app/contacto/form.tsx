@@ -8,7 +8,17 @@ import { trackAnalyticsEvent } from '../analytics';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
-export default function ContactForm() {
+export default function ContactForm({
+  title = 'Contáctenos',
+  description = 'Completa tus datos y el mensaje llegará directamente al correo de Blümik.',
+  helper = 'Evita incluir diagnósticos, expedientes o datos médicos sensibles en este formulario.',
+  privacyLabel = 'aviso de privacidad',
+}: {
+  title?: string;
+  description?: string;
+  helper?: string;
+  privacyLabel?: string;
+}) {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<Status>('idle');
 
@@ -60,11 +70,8 @@ export default function ContactForm() {
     <form ref={formRef} className="contact-form" onSubmit={submitForm}>
       <div className="form-heading">
         <span>Escríbenos</span>
-        <h3>Contáctenos</h3>
-        <p>
-          Completa tus datos y el mensaje llegará directamente al correo de
-          Blümik.
-        </p>
+        <h3>{title}</h3>
+        <p>{description}</p>
       </div>
       <div className="form-honeypot" aria-hidden="true">
         <label htmlFor="website">Sitio web</label>
@@ -114,15 +121,12 @@ export default function ContactForm() {
         maxLength={1500}
         required
       />
-      <p className="form-helper">
-        Evita incluir diagnósticos, expedientes o datos médicos sensibles en
-        este formulario.
-      </p>
+      <p className="form-helper">{helper}</p>
       <label className="privacy-consent" htmlFor="privacidad">
         <input id="privacidad" name="privacidad" type="checkbox" required />
         <span>
-          He leído y acepto el{' '}
-          <a href="/aviso-de-privacidad">aviso de privacidad</a>.
+          He leído y acepto el <a href="/aviso-de-privacidad">{privacyLabel}</a>
+          .
         </span>
       </label>
       <button className="send" type="submit" disabled={status === 'sending'}>

@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { PublishedImage } from '@/lib/hyronix/media';
+import type { Media } from '@/lib/hyronix/types';
 import { dimensionsFor } from './image-data';
 
 export function VisualEffects() {
@@ -71,7 +73,7 @@ export function VisualEffects() {
   return null;
 }
 
-type CarouselImage = { src: string; alt: string };
+type CarouselImage = { media?: Media; src: string; alt: string };
 
 export function LazyVideo({
   className,
@@ -158,7 +160,8 @@ export function AutoCarousel({
     <section className="visual-carousel" data-reveal aria-label={label}>
       <div className="carousel-stage">
         {images.map((image, index) => (
-          <img
+          <PublishedImage
+            media={image.media}
             key={image.src}
             className={`carousel-slide${index === active ? ' is-active' : ''}${index === previous ? ' is-previous' : ''}`}
             src={`/assets/${image.src}.webp`}

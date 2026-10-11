@@ -1,10 +1,12 @@
+import { getBlumikSettings } from '@/lib/hyronix/settings';
+import { SettingsProvider } from '@/lib/hyronix/settings-context';
 import type { Metadata, Viewport } from 'next';
 import '../public/assets/sen.css';
 import '../public/assets/lato.css';
 import './globals.css';
 import { Header, Footer } from './shared';
 import { VisualEffects } from './motion';
-import { businessJsonLd, seoDescriptions } from './seo';
+import { seoDescriptions } from './seo';
 import { siteConfig } from './site-config';
 import { AnalyticsConsent } from './analytics';
 
@@ -66,21 +68,20 @@ export const metadata: Metadata = {
     images: ['/assets/IMG_0909-hero.webp'],
   },
 };
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const settings = await getBlumikSettings();
   return (
     <html lang="es">
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
-        />
-        <VisualEffects />
-        <Header />
-        {children}
-        <Footer />
-        <AnalyticsConsent />
+        <SettingsProvider value={settings}>
+          <VisualEffects />
+          <Header />
+          {children}
+          <Footer />
+          <AnalyticsConsent />
+        </SettingsProvider>
       </body>
     </html>
   );

@@ -1,16 +1,26 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, Children, isValidElement, type ReactNode } from 'react';
+function nodeText(node: ReactNode): string {
+  return Children.toArray(node)
+    .map((n) =>
+      typeof n === 'string' || typeof n === 'number'
+        ? String(n)
+        : isValidElement<{ children?: ReactNode }>(n)
+          ? n.type === 'br'
+            ? ' '
+            : nodeText(n.props.children)
+          : '',
+    )
+    .join('');
+}
+const normalize = (value: string) => value.replace(/\s+/g, ' ').trim();
 import { MapPin, Menu, Navigation, X } from 'lucide-react';
-import {
-  mapsEmbedUrl,
-  mapsUrl,
-  siteConfig,
-  wazeUrl,
-  whatsappMessageForPath,
-  whatsappUrl,
-} from './site-config';
+import { whatsappMessageForPath } from './site-config';
+import { useBlumikSettings } from '@/lib/hyronix/settings-context';
+import { PublishedImage } from '@/lib/hyronix/media';
+import type { Media } from '@/lib/hyronix/types';
 import { dimensionsFor } from './image-data';
 
 const links = [
@@ -24,14 +34,28 @@ const links = [
 
 export function CTA({
   children = '¡Contáctanos!',
+  href,
 }: {
   children?: React.ReactNode;
+  href?: string;
 }) {
   const path = usePathname();
+  const settings = useBlumikSettings();
+  const whatsappUrl = (message: string) =>
+    `https://wa.me/${settings.phoneInternational}?text=${encodeURIComponent(message)}`;
   return (
     <a
       className="cta"
-      href={whatsappUrl(whatsappMessageForPath(path))}
+      href={
+        href && !href.startsWith('https://wa.me/')
+          ? href
+          : whatsappUrl(
+              href?.startsWith('https://wa.me/')
+                ? (new URL(href).searchParams.get('text') ??
+                    whatsappMessageForPath(path))
+                : whatsappMessageForPath(path),
+            )
+      }
       target="_blank"
       rel="noreferrer"
     >
@@ -81,10 +105,11 @@ function InstagramIcon() {
 }
 
 export function SocialLinks({ className = '' }: { className?: string }) {
+  const settings = useBlumikSettings();
   return (
     <div className={`contact-social ${className}`.trim()}>
       <a
-        href={siteConfig.social.facebook}
+        href={settings.social.facebook}
         target="_blank"
         rel="noreferrer"
         aria-label="Visitar Facebook de Blümik"
@@ -93,7 +118,7 @@ export function SocialLinks({ className = '' }: { className?: string }) {
       </a>
       <a
         className="instagram-link"
-        href={siteConfig.social.instagram}
+        href={settings.social.instagram}
         target="_blank"
         rel="noreferrer"
         aria-label="Visitar Instagram de Blümik"
@@ -106,6 +131,9 @@ export function SocialLinks({ className = '' }: { className?: string }) {
 
 export function Header() {
   const path = usePathname();
+  const settings = useBlumikSettings();
+  const whatsappUrl = (message: string) =>
+    `https://wa.me/${settings.phoneInternational}?text=${encodeURIComponent(message)}`;
   const [open, setOpen] = useState(false);
   return (
     <header className="header">
@@ -186,14 +214,17 @@ export function Photo({
   src,
   alt,
   className = '',
+  media,
 }: {
+  media?: Media;
   src: string;
   alt: string;
   className?: string;
 }) {
   const dimensions = dimensionsFor(src);
   return (
-    <img
+    <PublishedImage
+      media={media}
       data-reveal
       className={'photo ' + className}
       src={'/assets/' + src + '.webp'}
@@ -242,7 +273,11 @@ export function Hero({
   subtitle,
   description,
   button,
+  cmsTitle,
+  buttonHref,
 }: {
+  cmsTitle?: string;
+  buttonHref?: string;
   kind: string;
   title: React.ReactNode;
   subtitle: React.ReactNode;
@@ -278,40 +313,57 @@ export function Hero({
       />
       <div className="hero-panel">
         <h1>
-          {title}
-          <small>{subtitle}</small>
+          {cmsTitle &&
+          normalize(cmsTitle) !==
+            normalize(nodeText(title) + ' ' + nodeText(subtitle)) ? (
+            <>
+              {cmsTitle.split('\n')[0]}
+              <small>
+                {cmsTitle
+                  .split('\n')
+                  .slice(1)
+                  .map((line, i) => (
+                    <span key={i}>
+                      {i > 0 && <br />}
+                      {line}
+                    </span>
+                  ))}
+              </small>
+            </>
+          ) : (
+            <>
+              {title}
+              <small>{subtitle}</small>
+            </>
+          )}
         </h1>
         <p>{description}</p>
-        <CTA>{button}</CTA>
+        <CTA href={buttonHref}>{button}</CTA>
       </div>
     </section>
   );
 }
 
-export function LocationSection({ className = '' }: { className?: string }) {
+export function LocationSection({
+  className = '',
+  title = 'Visítanos',
+}: {
+  className?: string;
+  title?: string;
+}) {
   const path = usePathname();
+  const settings = useBlumikSettings();
+  const whatsappUrl = (message: string) =>
+    `https://wa.me/${settings.phoneInternational}?text=${encodeURIComponent(message)}`;
   return (
     <section className={`location-section wide ${className}`}>
       <div className="location-copy" data-reveal data-reveal-direction="left">
         <span className="eyebrow">Ubicación</span>
-        <h2>Visítanos</h2>
-        <address>{siteConfig.address}</address>
+        <h2>{title}</h2>
+        <address>{settings.address}</address>
         <div className="location-details">
           <p>
-            <strong>Horario:</strong>{' '}
-            {siteConfig.hours.map((item, index) => (
-              <span key={item.days}>
-                {index > 0 ? ' ' : ''}
-                {item.first === 'Cerrado' ? (
-                  <>{item.days}: cerrado.</>
-                ) : (
-                  <>
-                    {item.days}, de {item.first}
-                    {item.second ? ` y de ${item.second}` : ''}.
-                  </>
-                )}
-              </span>
-            ))}
+            <strong>Horario:</strong> {settings.openingHours}
           </p>
           <p>
             <strong>WhatsApp:</strong>{' '}
@@ -320,23 +372,40 @@ export function LocationSection({ className = '' }: { className?: string }) {
               target="_blank"
               rel="noreferrer"
             >
-              {siteConfig.phoneDisplay}
+              {settings.phoneDisplay}
             </a>
           </p>
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          <a href={`mailto:${settings.email}`}>{settings.email}</a>
         </div>
         <div className="location-actions">
-          <a href={mapsUrl} target="_blank" rel="noreferrer">
+          <a
+            href={
+              'https://www.google.com/maps/search/?api=1&query=' +
+              encodeURIComponent(`${settings.name}, ${settings.address}`)
+            }
+            target="_blank"
+            rel="noreferrer"
+          >
             <MapPin aria-hidden="true" /> Cómo llegar
           </a>
-          <a href={wazeUrl} target="_blank" rel="noreferrer">
+          <a
+            href={
+              'https://waze.com/ul?q=' + encodeURIComponent(settings.address)
+            }
+            target="_blank"
+            rel="noreferrer"
+          >
             <Navigation aria-hidden="true" /> Abrir Waze
           </a>
         </div>
       </div>
       <div className="location-map" data-reveal data-reveal-direction="right">
         <iframe
-          src={mapsEmbedUrl}
+          src={
+            'https://www.google.com/maps?q=' +
+            encodeURIComponent(`${settings.name}, ${settings.address}`) +
+            '&output=embed'
+          }
           title="Ubicación de Blümik en Google Maps"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -348,6 +417,9 @@ export function LocationSection({ className = '' }: { className?: string }) {
 
 export function Footer() {
   const path = usePathname();
+  const settings = useBlumikSettings();
+  const whatsappUrl = (message: string) =>
+    `https://wa.me/${settings.phoneInternational}?text=${encodeURIComponent(message)}`;
   const footerLinks = [
     ['/servicios', 'Servicios'],
     ['/pacientes-neurodivergentes', 'Atención neurodivergente'],
@@ -383,31 +455,16 @@ export function Footer() {
         </nav>
         <section className="footer-contact-list">
           <h2>Contacto</h2>
-          <p>{siteConfig.address}</p>
-          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          <p>{settings.address}</p>
+          <a href={`mailto:${settings.email}`}>{settings.email}</a>
           <a
             href={whatsappUrl(whatsappMessageForPath(path))}
             target="_blank"
             rel="noreferrer"
           >
-            WhatsApp: {siteConfig.phoneDisplay}
+            WhatsApp: {settings.phoneDisplay}
           </a>
-          <p className="footer-schedule">
-            Horario:{' '}
-            {siteConfig.hours.map((item, index) => (
-              <span key={item.days}>
-                {index > 0 ? ' ' : ''}
-                {item.first === 'Cerrado' ? (
-                  <>{item.days}: cerrado.</>
-                ) : (
-                  <>
-                    {item.days}, de {item.first}
-                    {item.second ? ` y de ${item.second}` : ''}.
-                  </>
-                )}
-              </span>
-            ))}
-          </p>
+          <p className="footer-schedule">Horario: {settings.openingHours}</p>
           <div className="footer-social-wrap">
             <strong>Síguenos</strong>
             <SocialLinks className="footer-social" />

@@ -1,11 +1,8 @@
-'use client';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { BreadcrumbJsonLd } from '../seo';
+import { PageSchema } from '@/lib/hyronix/schema';
+import { getPageContent } from '@/lib/hyronix/pages';
+import { safeJson } from '@/lib/hyronix/schema';
+import { FAQList } from './faq-list';
+
 const columns = [
   [
     {
@@ -100,35 +97,30 @@ const faqSchema = {
   })),
 };
 
-export default function FAQ() {
+export default async function FAQ() {
+  const content = await getPageContent('preguntas-frecuentes');
+  const items = content.faq(columns.flat());
+  const currentColumns = [items.slice(0, 8), items.slice(8)];
+  const currentSchema = {
+    ...faqSchema,
+    mainEntity: items.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  };
   return (
     <main>
-      <BreadcrumbJsonLd path="/preguntas-frecuentes" />
+      <PageSchema slug="preguntas-frecuentes" />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJson(currentSchema) }}
       />
       <section className="faq-banner center">
         <img src="/assets/simbolo-morado.png" alt="Símbolo de Blümik" />
-        <h1>Preguntas Frecuentes</h1>
+        <h1>{content.text('hero', 'title', 'Preguntas Frecuentes')}</h1>
       </section>
-      <section className="faq-columns">
-        {columns.map((questions, i) => (
-          <Accordion key={i} className="faq-list">
-            {questions.map(({ question, answer }) => (
-              <AccordionItem key={question} className="faq-item">
-                <AccordionTrigger>
-                  {question}
-                  <span className="plus" aria-hidden="true" />
-                </AccordionTrigger>
-                <AccordionContent className="faq-answer">
-                  <p>{answer}</p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        ))}
-      </section>
+      <FAQList columns={currentColumns} />
     </main>
   );
 }
