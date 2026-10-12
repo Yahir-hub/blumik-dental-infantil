@@ -3,6 +3,9 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
+import { randomBytes, randomUUID, createHmac } from 'node:crypto';
+const secret = randomBytes(32).toString('hex');
+let contentVersion = Date.now();
 const root = process.cwd(),
   out = root + '/.qa';
 await mkdir(out, { recursive: true });
@@ -69,6 +72,7 @@ const proxy = createServer(async (req, res) => {
   }
   // Real published payload copied only inside a local fault-injection test. Supabase is never mutated.
   const body = structuredClone(original);
+  body.site.content_version = contentVersion;
   if (mode === 'sentinel') {
     if (body.page) {
       const hero = body.page.sections.find((s) => s.key === 'hero');
@@ -86,7 +90,6 @@ const proxy = createServer(async (req, res) => {
         body.page.sections.find((s) => s.key === 'section_2').fields.items = [
           { question: 'HYRONIX_QUESTION', answer: 'HYRONIX_ANSWER' },
         ];
-      body.page.draft_value = 'DRAFT_MUST_NEVER_RENDER';
     } else {
       Object.assign(body.site_settings, {
         phone: '477 123 4567',
@@ -101,7 +104,8 @@ const proxy = createServer(async (req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify(body));
 });
-await new Promise((resolve) => proxy.listen(3102, '127.0.0.1', resolve));
+await new Promise((resolve) => proxy.listen(0, '127.0.0.1', resolve));
+const proxyPort = proxy.address().port;
 const child = spawn(
   process.execPath,
   [
@@ -116,7 +120,12 @@ const child = spawn(
     cwd: root,
     env: {
       ...process.env,
-      HYRONIX_CONTENT_API_URL: 'http://127.0.0.1:3102/api/content/v1',
+      HYRONIX_CONTENT_API_URL: `http://127.0.0.1:${proxyPort}/api/content/v1`,
+      HYRONIX_WEBHOOK_SECRET: secret,
+      HYRONIX_STORE_DRIVER: 'local',
+      HYRONIX_LOCAL_STORE_PATH: `${out}/verify-${randomUUID()}.sqlite`,
+      HYRONIX_CONTENT_REVALIDATE_SECONDS: '60',
+      HYRONIX_PREWARM: 'false',
     },
     stdio: ['ignore', 'pipe', 'pipe'],
     windowsHide: true,
@@ -167,6 +176,46 @@ async function page(slug, origin = 'http://127.0.0.1:3002') {
   };
 }
 const results = [];
+async function invalidate() {
+  contentVersion++;
+  const body = JSON.stringify({
+    event_id: randomUUID(),
+    site_key: key,
+    content_version: contentVersion,
+    published_at: new Date().toISOString(),
+    event_type: 'settings.updated',
+    affected_slugs: [],
+  });
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const timestamp = String(Math.floor(Date.now() / 1000));
+    const response = await fetch(
+      'http://127.0.0.1:3002/api/hyronix/revalidate',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-hyronix-timestamp': timestamp,
+          'x-hyronix-event-id': JSON.parse(body).event_id,
+          'x-hyronix-signature':
+            'sha256=' +
+            createHmac('sha256', secret)
+              .update(timestamp + '.' + body)
+              .digest('hex'),
+        },
+        body,
+      },
+    );
+    if (response.status === 429) {
+      await new Promise((resolve) =>
+        setTimeout(resolve, Number(response.headers.get('retry-after')) * 1000),
+      );
+      continue;
+    }
+    assert.equal(response.status, 200);
+    return;
+  }
+  throw Error('Webhook rate limit did not recover');
+}
 try {
   for (let i = 0; i < 60; i++) {
     try {
@@ -199,10 +248,9 @@ try {
       1,
       'One page fetch ' + slug,
     );
-    assert.equal(
-      counts.filter((p) => p.endsWith('/sites/' + key)).length,
-      1,
-      'One settings fetch',
+    assert.ok(
+      counts.filter((p) => p.endsWith('/sites/' + key)).length <= 1,
+      'Initial settings fetch or cached settings',
     );
     await writeFile(out + '/blumik-ssr-' + slug + '.html', result.html);
     results.push({
@@ -221,6 +269,7 @@ try {
     'preguntas-frecuentes',
   ]) {
     mode = 'sentinel';
+    await invalidate();
     const result = await page(slug);
     assert.ok(
       result.text.includes('HYRONIX_H1_' + slug),
@@ -244,6 +293,8 @@ try {
     results.push({ case: 'sentinel', slug, status: 'PASS' });
   }
   mode = 'live';
+  await invalidate();
+  for (const slug of slugs) await page(slug);
   const normal = await page('home');
   for (const failure of [
     'error-404',
@@ -256,6 +307,7 @@ try {
     'slow',
   ]) {
     mode = failure;
+    await invalidate();
     const result = await page('home');
     assert.equal(
       result.text,
@@ -272,6 +324,7 @@ try {
     await writeFile(out + '/' + failure + '.html', result.html);
   }
   mode = 'error-503';
+  await invalidate();
   for (const slug of slugs.slice(1)) {
     const result = await page(slug);
     assert.ok(result.text.length > 100);

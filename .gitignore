@@ -41,3 +41,4 @@ next-env.d.ts
 
 !.env.example
 .qa-audit.json
+/.hyronix/

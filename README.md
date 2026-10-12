@@ -42,3 +42,9 @@ Contenido y metadata se leen server-side, con una petición de página y otra de
 Verificar: npm run lint, npx tsc --noEmit, npm run build; luego node --env-file=.env.local scripts/verify-hyronix.mjs con CMS activo. El harness usa puertos temporales 3002/3102, copias locales de respuestas y guarda evidencia en .qa (ignorado), sin editar Supabase. Mantener puertos libres antes de ejecutarlo.
 
 Reportes: HYRONIX_SOURCE_ANALYSIS.md, BLUMIK_SOURCE_MAPPING_REPORT.md, HYRONIX_REVALIDATION_PLAN.md y ETAPA5B_BLUMIK_REPORT.md. Producción, main y dominios no forman parte de esta entrega.
+
+## ETAPA 5C — operación local
+
+La política activa sustituye no-store de5B por caché validada60 s y snapshot Hyronix. .env.local: HYRONIX_CONTENT_REVALIDATE_SECONDS=60, HYRONIX_STORE_DRIVER=local, HYRONIX_LOCAL_STORE_PATH=.hyronix/state.sqlite. El directorio se ignora en Git. Sin secreto dedicado el webhook permanece cerrado; las suites generan secretos efímeros.
+
+Tests: node scripts/test-resilience.mjs; node --env-file=.env.local scripts/test-cache-integration.mjs; node --env-file=.env.local scripts/verify-hyronix.mjs. Puertos temporales3002/3004 y proxy aleatorio. Ver los tres reportes5C y HYRONIX_REVALIDATION_PLAN.md. Antes de serverless conectar adapters durables compartidos; el driver local no funciona como persistencia productiva.

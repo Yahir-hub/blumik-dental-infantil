@@ -1,8 +1,13 @@
 import 'server-only';
 import { cache } from 'react';
-import { isPage, record, type Page, type PublicSettings } from './types';
+import { unstable_cache } from 'next/cache';
+import { connection } from 'next/server';
+import { type Page, type PublicSettings } from './types';
+import { isSlug, revalidateSeconds, tagsFor } from './config';
+import { snapshotStore } from './stores';
+import { refreshSnapshot } from './loader';
+import type { Snapshot } from './contracts';
 
-const TIMEOUT_MS = 1200;
 export function apiOrigin() {
   const value = process.env.HYRONIX_CONTENT_API_URL;
   if (!value) return null;
@@ -29,72 +34,71 @@ export function apiOrigin() {
     return null;
   }
 }
-async function request(path: string): Promise<Record<string, unknown> | null> {
-  const start = Date.now();
-  let status = 0;
-  let fallbackUsed = true;
-  try {
-    const base = apiOrigin(),
-      key = process.env.HYRONIX_SITE_KEY;
-    if (!base || !key || !/^site_[a-f0-9]{32}$/.test(key)) return null;
-    const response = await fetch(
-      `${base.href.replace(/\/$/, '')}/sites/${key}${path}`,
-      {
-        cache: 'no-store',
-        signal: AbortSignal.timeout(TIMEOUT_MS),
-        headers: { Accept: 'application/json' },
-      },
-    );
-    status = response.status;
-    if (!response.ok) return null;
-    const text = await response.text();
-    if (text.length > 1000000) return null;
-    const value: unknown = JSON.parse(text);
-    if (
-      !record(value) ||
-      !record(value.site) ||
-      value.site.key !== key ||
-      typeof value.site.content_version !== 'number'
-    )
-      return null;
-    if (path) {
-      if (
-        !isPage(value.page) ||
-        value.page.slug !== (path === '/pages/home' ? '/' : path.slice(6))
-      )
-        return null;
-    } else if (
-      !record(value.site_settings) ||
-      !Object.values(value.site_settings).every((v) => typeof v === 'string')
-    )
-      return null;
-    fallbackUsed = false;
-    return value;
-  } catch {
+export async function loadResource(resource: string): Promise<Snapshot | null> {
+  const base = apiOrigin(),
+    key = process.env.HYRONIX_SITE_KEY;
+  if (
+    !base ||
+    !key ||
+    !/^site_[a-f0-9]{32}$/.test(key) ||
+    (resource !== 'settings' && !isSlug(resource))
+  )
     return null;
-  } finally {
-    console.info(
-      '[Hyronix]',
-      JSON.stringify({
-        route: path || '/settings',
-        status,
-        latency: Date.now() - start,
-        fallbackUsed,
-      }),
-    );
+  const started = Date.now();
+  try {
+    const store = snapshotStore();
+    const snapshot = await unstable_cache(
+      () => refreshSnapshot(base.href, key, resource, store),
+      ['hyronix-v2', base.href, key, resource],
+      { revalidate: revalidateSeconds(), tags: tagsFor(key, resource) },
+    )();
+    const latest = await store.get(key, resource);
+    return latest && latest.contentVersion > snapshot.contentVersion
+      ? latest
+      : snapshot;
+  } catch {
+    try {
+      const snapshot = await snapshotStore().get(key, resource);
+      console.info(
+        '[Hyronix]',
+        JSON.stringify({
+          route: resource,
+          latency: Date.now() - started,
+          fallbackUsed: snapshot ? 'snapshot' : 'original',
+        }),
+      );
+      return snapshot;
+    } catch {
+      return null;
+    }
   }
+}
+export async function prewarmResources(resources: string[]) {
+  const base = apiOrigin(),
+    key = process.env.HYRONIX_SITE_KEY;
+  if (!base || !key) return false;
+  const results = await Promise.allSettled(
+    resources.map((resource) =>
+      refreshSnapshot(base.href, key, resource, snapshotStore()),
+    ),
+  );
+  return results.every((r) => r.status === 'fulfilled');
 }
 export const getPublishedPage = cache(
   async (slug: string): Promise<Page | null> => {
-    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return null;
-    const response = await request('/pages/' + slug);
-    return (response?.page as Page | null) ?? null;
+    await connection();
+    if (!isSlug(slug)) return null;
+    const snapshot = await loadResource(slug);
+    return snapshot && 'page' in snapshot.data ? snapshot.data.page : null;
   },
 );
 export const getPublishedSettings = cache(
   async (): Promise<PublicSettings | null> => {
-    const response = await request('');
-    return (response?.site_settings as PublicSettings | null) ?? null;
+    await connection();
+    const snapshot = await loadResource('settings');
+    return snapshot && 'site_settings' in snapshot.data
+      ? snapshot.data.site_settings
+      : null;
   },
 );
 export function mediaUrl(path: string) {
