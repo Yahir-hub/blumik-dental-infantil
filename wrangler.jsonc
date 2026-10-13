@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blumik-hyronix-staging",
+  "account_id": "afbf82bb0732b155e201ed658dd9f58c",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-10-12",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "observability": { "enabled": true, "head_sampling_rate": 1 },
+  "vars": {
+    "HYRONIX_ENVIRONMENT": "staging",
+    "HYRONIX_CONTENT_API_URL": "https://hyronix-cms-staging.yahir-rp-ti.workers.dev/api/content/v1",
+    "HYRONIX_SITE_KEY": "site_6103c2457d57421188c5f0a71138bec0",
+    "HYRONIX_CONTENT_REVALIDATE_SECONDS": "60",
+    "HYRONIX_STORE_DRIVER": "postgres",
+    "HYRONIX_STORE_NAMESPACE": "blumik-staging",
+    "HYRONIX_PREWARM": "true"
+  },
+  "kv_namespaces": [{ "binding": "NEXT_INC_CACHE_KV", "id": "de160f978b3e4fcb927106159704c410" }],
+  "d1_databases": [{ "binding": "NEXT_TAG_CACHE_D1", "database_name": "hyronix-blumik-staging-tags", "database_id": "633eb158-1731-4adb-8321-2f07c15c6db5" }]
+}

@@ -158,7 +158,9 @@ export async function handleWebhook(
       }),
     );
     return reply(200, warmed ? 'invalidated_and_warmed' : 'invalidated');
-  } catch {
+  } catch (error) {
+    const code = error instanceof Error && ['INVALID_STORE_CONFIG','DURABLE_STORE_UNAVAILABLE','INVALID_RESERVATION','EMPTY_BODY'].includes(error.message) ? error.message : 'WEBHOOK_PROCESSING_FAILED';
+    console.warn('[Hyronix webhook]', JSON.stringify({ event_id: id, result: code }));
     if (token)
       await deps
         .store()

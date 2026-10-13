@@ -40,6 +40,8 @@
     "**/*.mts"
   ],
   "exclude": [
+    ".open-next",
+    ".wrangler",
     "node_modules"
   ]
 }

@@ -9,6 +9,7 @@ import { VisualEffects } from './motion';
 import { seoDescriptions } from './seo';
 import { siteConfig } from './site-config';
 import { AnalyticsConsent } from './analytics';
+import { isStaging } from '@/lib/hyronix/environment';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -35,11 +36,11 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   alternates: { canonical: '/' },
   robots: {
-    index: true,
-    follow: true,
+    index: !isStaging(),
+    follow: !isStaging(),
     googleBot: {
-      index: true,
-      follow: true,
+      index: !isStaging(),
+      follow: !isStaging(),
       'max-image-preview': 'large',
       'max-video-preview': -1,
       'max-snippet': -1,

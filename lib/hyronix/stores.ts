@@ -1,7 +1,8 @@
 import 'server-only';
 import { resolve } from 'node:path';
-import { LocalStore } from './local-store';
+import { LocalStore } from '@/lib/hyronix/local-store';
 import type { SnapshotStore, WebhookReplayStore } from './contracts';
+import { PostgresStore } from './postgres-store';
 let store: LocalStore | undefined;
 function local() {
   if (
@@ -15,5 +16,15 @@ function local() {
   return (store ??= new LocalStore(resolve(path)));
 }
 // Provider integration point: both adapters must meet the atomic contract documented in 5C.
-export const snapshotStore = (): SnapshotStore => local();
-export const replayStore = (): WebhookReplayStore => local();
+function configured(): SnapshotStore & WebhookReplayStore {
+  if (process.env.HYRONIX_STORE_DRIVER !== 'postgres') return local();
+  return new PostgresStore({
+    url: process.env.HYRONIX_STORE_URL ?? '',
+    publishableKey: process.env.HYRONIX_STORE_PUBLISHABLE_KEY ?? '',
+    token: process.env.HYRONIX_STORE_TOKEN ?? '',
+    namespace: process.env.HYRONIX_STORE_NAMESPACE ?? '',
+    site: process.env.HYRONIX_SITE_KEY ?? '',
+  });
+}
+export const snapshotStore = (): SnapshotStore => configured();
+export const replayStore = (): WebhookReplayStore => configured();

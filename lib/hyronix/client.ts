@@ -13,6 +13,9 @@ export function apiOrigin() {
   if (!value) return null;
   try {
     const url = new URL(value);
+    const fault = process.env.HYRONIX_STAGING_API_MODE;
+    if (process.env.HYRONIX_ENVIRONMENT === 'staging' && ['unavailable','corrupt'].includes(fault ?? ''))
+      url.pathname = `/__staging_harness/${fault}/api/content/v1`;
     if (
       url.username ||
       url.password ||
@@ -68,7 +71,9 @@ export async function loadResource(resource: string): Promise<Snapshot | null> {
         }),
       );
       return snapshot;
-    } catch {
+    } catch (error) {
+      const code = error instanceof Error && ['STORE_TRANSPORT_TYPE_ERROR','STORE_TRANSPORT_FAILED','STORE_BODY_READ_FAILED','STORE_JSON_INVALID','INVALID_STORE_CONFIG','DURABLE_STORE_UNAVAILABLE','DURABLE_STORE_NOT_CONFIGURED','LOCAL_STORE_DISABLED_IN_STAGING','EMPTY_BODY','INVALID_STORED_SNAPSHOT'].includes(error.message) ? error.message : 'STORE_READ_FAILED';
+      console.warn('[Hyronix store]', JSON.stringify({ route: resource, result: code }));
       return null;
     }
   }
@@ -103,5 +108,9 @@ export const getPublishedSettings = cache(
 );
 export function mediaUrl(path: string) {
   const base = apiOrigin();
+  // The controlled staging outage also exercises the existing image onError
+  // fallback. This fixed fixture returns 503 and never accesses real media.
+  if (base && process.env.HYRONIX_ENVIRONMENT === 'staging' && process.env.HYRONIX_STAGING_API_MODE === 'unavailable')
+    return new URL(`${base.pathname}/sites/${process.env.HYRONIX_SITE_KEY}/pages/home`, base.origin).href;
   return base ? new URL(path, base.origin).href : null;
 }
