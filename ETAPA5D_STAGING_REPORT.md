@@ -1,7 +1,7 @@
 # ETAPA 5D — staging real
 13 de octubre de 2026 · America/Mexico_City.
 
-**Funcional; certificación completa pendiente de fallback visual de imágenes.** El navegador integrado dejó de inicializar («missing kernel assets directory / os error 3»), incluso tras reiniciarlo. No se sustituye esa prueba por un PASS.
+**Actualización 14 de octubre: pendientes técnicos de 5D cerrados en ETAPA 5E.** Media visual pasó con Chrome/Playwright, la clave administrativa histórica fue rotada/revocada y las seis versiones afectadas fueron retiradas. Véase [ETAPA5E_PREPRODUCTION_REPORT.md](ETAPA5E_PREPRODUCTION_REPORT.md). El resto de este informe conserva resultados y límites observados originalmente en 5D; el dictamen vigente de producción es NO por los pendientes preproductivos detallados en 5E.
 
 - CMS: https://hyronix-cms-staging.yahir-rp-ti.workers.dev
 - Blumik: https://blumik-hyronix-staging.yahir-rp-ti.workers.dev
@@ -32,7 +32,7 @@
 | NEXT CACHE | PASS: hits remotos sin refresh API, TTL 60 s y renovación |
 | LAST KNOWN GOOD | PASS: B conserva B con 503, JSON corrupto y redeploy |
 | API OUTAGE | PASS: tres rutas 200 con snapshot |
-| MEDIA | FAIL certificación completa: HTTP/media privada/versionada/asset local PASS; falta observar onError tras hidratación en navegador staging |
+| MEDIA | PASS cerrado en 5E: Chrome hidratado, 503 → asset local visible, capturas y resultado estructurado |
 | DRAFT LEAK | PASS: API, snapshot/store y outbox |
 | SECRET BOUNDARY | PASS artefactos actuales; salvedad histórica abajo |
 | RLS | PASS: anónimo y JWT real sin membresía denegados; autoascenso staff y RPC privado rechazados |
@@ -70,7 +70,7 @@ Auth allowlist: /auth/confirm, /auth/callback, /reset-password del host CMS auto
 PASS: npm install ambos; CMS lint/typecheck/build/OpenNext; Blumik lint/tsc/build/OpenNext; 17 migraciones con seed/RLS/outbox/store; Content API; ETag; delivery/HMAC/timeout/backoff/Retry-After/redirects; scheduler; dos adapters PGlite; store remoto; verify-hyronix siete SSR/ocho fallos/SEO/FAQ; resilience/replay/rate; cache local/HTTPS; 22 probes remotos; publicación/restauración/redeploy; seguridad real media/RLS; scanners.
 Los módulos test-outbox-db y test-staging-store-db se ejecutan mediante test:migrations.
 Scanners actuales: 952 archivos CMS, 837 Blumik y 54 públicos. Evidencias completas: artifacts/etapa5d/*.json.
-Pendiente: prueba visual de fallback de imágenes, bloqueada por herramienta.
+Pendiente original de navegador: resuelto en 5E; evidencia `artifacts/etapa5e/media-browser.json`.
 
 ## Correcciones y límites
 1. OpenNext omitía preview-props.json en Next 16.4: parche reproducible condicionado a versiones.
@@ -83,6 +83,5 @@ Pendiente: prueba visual de fallback de imágenes, bloqueada por herramienta.
 8. OpenNext advierte Windows y middleware Node experimental; mantener regresión al actualizar.
 9. Imagen totalmente nueva sin equivalente local no tiene copia local de bytes: snapshot conserva referencia. Independencia de media requiere estrategia adicional.
 
-## Pendiente para cerrar 5D
-Restablecer navegador y observar imagen remota 503 → asset local tras hidratación. Fixture segura preparada; asset original responde 200. Esta prueba pública no requiere credenciales.
-Antes de producción: SMTP/dominio cuando se autorice esa etapa, cuotas/disponibilidad, versiones históricas/rotación y tooling. Sin deploy productivo ni merge main.
+## Cierre de 5D y pendientes preproductivos
+Media hidratada y rotación/historial resueltos en 5E. Las cifras audit de este informe son históricas: 5E redujo a 5/7 high de desarrollo y cero en los grafos npm productivos. Permanecen capacidad, configuración del entorno futuro y riesgos detallados en el reporte 5E. Sin deploy productivo ni merge main.

@@ -1,0 +1,447 @@
+{
+  "date": "2026-10-14T20:50:57.180Z",
+  "status": "PASS",
+  "ttl": 60,
+  "note": "Full streamed responses consumed. First request is not a guaranteed cold isolate; KV propagation can cause initial misses.",
+  "metrics": [
+    {
+      "path": "/",
+      "phase": "first",
+      "ttfb_ms": 2987,
+      "total_ms": 2998,
+      "at": 1792010972223
+    },
+    {
+      "path": "/",
+      "phase": "warm",
+      "ttfb_ms": 778,
+      "total_ms": 781,
+      "at": 1792010974507
+    },
+    {
+      "path": "/",
+      "phase": "warm",
+      "ttfb_ms": 342,
+      "total_ms": 345,
+      "at": 1792010974851
+    },
+    {
+      "path": "/servicios",
+      "phase": "first",
+      "ttfb_ms": 356,
+      "total_ms": 381,
+      "at": 1792010975232
+    },
+    {
+      "path": "/servicios",
+      "phase": "warm",
+      "ttfb_ms": 364,
+      "total_ms": 378,
+      "at": 1792010977121
+    },
+    {
+      "path": "/servicios",
+      "phase": "warm",
+      "ttfb_ms": 416,
+      "total_ms": 419,
+      "at": 1792010977539
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "phase": "first",
+      "ttfb_ms": 546,
+      "total_ms": 560,
+      "at": 1792010978099
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "phase": "warm",
+      "ttfb_ms": 221,
+      "total_ms": 234,
+      "at": 1792010979847
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "phase": "warm",
+      "ttfb_ms": 256,
+      "total_ms": 271,
+      "at": 1792010980118
+    },
+    {
+      "path": "/",
+      "phase": "expired",
+      "ttfb_ms": 855,
+      "total_ms": 857,
+      "at": 1792011045987
+    },
+    {
+      "path": "/",
+      "phase": "renewed",
+      "ttfb_ms": 323,
+      "total_ms": 325,
+      "at": 1792011048126
+    },
+    {
+      "path": "/servicios",
+      "phase": "expired",
+      "ttfb_ms": 497,
+      "total_ms": 498,
+      "at": 1792011048624
+    },
+    {
+      "path": "/servicios",
+      "phase": "renewed",
+      "ttfb_ms": 233,
+      "total_ms": 236,
+      "at": 1792011050661
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "phase": "expired",
+      "ttfb_ms": 436,
+      "total_ms": 438,
+      "at": 1792011051099
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "phase": "renewed",
+      "ttfb_ms": 256,
+      "total_ms": 257,
+      "at": 1792011053166
+    }
+  ],
+  "evidence": [
+    {
+      "outcome": "ok",
+      "at": 1792011021438,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 47508,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 47442,
+          "clockDelta": 0
+        }
+      ],
+      "refresh": []
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011022786,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 47270,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 48434,
+          "clockDelta": 0
+        }
+      ],
+      "refresh": []
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011023250,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 48890,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": false,
+          "ageMs": null,
+          "clockDelta": 0
+        },
+        {
+          "operation": "set"
+        }
+      ],
+      "refresh": [
+        {
+          "route": "pacientes-neurodivergentes",
+          "status": 200,
+          "latency": 508,
+          "operation": "refresh"
+        }
+      ]
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011024136,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 49776,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 45971,
+          "clockDelta": 0
+        }
+      ],
+      "refresh": []
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011024493,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 50129,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": false,
+          "ageMs": null,
+          "clockDelta": 0
+        },
+        {
+          "operation": "set"
+        }
+      ],
+      "refresh": [
+        {
+          "route": "profesionales",
+          "status": 200,
+          "latency": 393,
+          "operation": "refresh"
+        }
+      ]
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011025212,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 50857,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": false,
+          "ageMs": null,
+          "clockDelta": 0
+        },
+        {
+          "operation": "set"
+        }
+      ],
+      "refresh": [
+        {
+          "route": "contacto",
+          "status": 200,
+          "latency": 378,
+          "operation": "refresh"
+        }
+      ]
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011025901,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 51541,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": false,
+          "ageMs": null,
+          "clockDelta": 0
+        },
+        {
+          "operation": "set"
+        }
+      ],
+      "refresh": [
+        {
+          "route": "aviso-de-privacidad",
+          "status": 200,
+          "latency": 442,
+          "operation": "refresh"
+        }
+      ]
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011026656,
+      "cache": [],
+      "refresh": []
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011045332,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 71166,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 71371,
+          "clockDelta": 0
+        },
+        {
+          "operation": "set"
+        },
+        {
+          "operation": "set"
+        }
+      ],
+      "refresh": [
+        {
+          "route": "settings",
+          "status": 304,
+          "latency": 1019,
+          "operation": "refresh"
+        },
+        {
+          "route": "home",
+          "status": 304,
+          "latency": 892,
+          "operation": "refresh"
+        }
+      ]
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011047903,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 1326,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 1326,
+          "clockDelta": 0
+        }
+      ],
+      "refresh": []
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011048238,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 1661,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 72777,
+          "clockDelta": 0
+        },
+        {
+          "operation": "set"
+        }
+      ],
+      "refresh": [
+        {
+          "route": "servicios",
+          "status": 304,
+          "latency": 250,
+          "operation": "refresh"
+        }
+      ]
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011050526,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 3949,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 1920,
+          "clockDelta": 0
+        }
+      ],
+      "refresh": []
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011050768,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 4191,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 72708,
+          "clockDelta": 0
+        },
+        {
+          "operation": "set"
+        }
+      ],
+      "refresh": [
+        {
+          "route": "preguntas-frecuentes",
+          "status": 304,
+          "latency": 219,
+          "operation": "refresh"
+        }
+      ]
+    },
+    {
+      "outcome": "ok",
+      "at": 1792011053023,
+      "cache": [
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 1916,
+          "clockDelta": 0
+        },
+        {
+          "operation": "get",
+          "hit": true,
+          "ageMs": 6446,
+          "clockDelta": 0
+        }
+      ],
+      "refresh": []
+    }
+  ]
+}

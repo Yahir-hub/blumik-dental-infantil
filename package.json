@@ -46,5 +46,10 @@
     "typescript": "5.9.3",
     "wrangler": "^4.149.0"
   },
-  "type": "module"
+  "type": "module",
+  "overrides": {
+    "@node-minify/core": {
+      "glob": "10.5.0"
+    }
+  }
 }

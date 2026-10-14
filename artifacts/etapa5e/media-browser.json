@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-14T08:26:18.353Z",
+  "status": "PASS",
+  "browser": "Chrome headless / Playwright",
+  "validRemoteImage": true,
+  "fixtureHTTP": 503,
+  "hydratedLocalAsset": "/assets/IMG_8415.webp",
+  "beforeBox": {
+    "x": 69.4371566772461,
+    "y": 204.0273895263672,
+    "width": 619.7323989868164,
+    "height": 591.1014556884766
+  },
+  "afterBox": {
+    "x": 69.55979919433594,
+    "y": 203.96282958984375,
+    "width": 619.8640289306641,
+    "height": 591.2305908203125
+  },
+  "cls": 0.0016942756709346066,
+  "errorEvents": 3,
+  "errorCountStable": true,
+  "uncaughtErrors": [],
+  "screenshots": [
+    "media-before.png",
+    "media-after.png"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-14T21:06:50.999Z",
+  "routes": [
+    {
+      "slug": "home",
+      "http": 200,
+      "localAssets": true,
+      "seoPresent": true
+    },
+    {
+      "slug": "servicios",
+      "http": 200,
+      "localAssets": true,
+      "seoPresent": true
+    },
+    {
+      "slug": "pacientes-neurodivergentes",
+      "http": 200,
+      "localAssets": true,
+      "seoPresent": true
+    },
+    {
+      "slug": "preguntas-frecuentes",
+      "http": 200,
+      "localAssets": true,
+      "seoPresent": true
+    },
+    {
+      "slug": "profesionales",
+      "http": 200,
+      "localAssets": true,
+      "seoPresent": true
+    },
+    {
+      "slug": "contacto",
+      "http": 200,
+      "localAssets": true,
+      "seoPresent": true
+    },
+    {
+      "slug": "aviso-de-privacidad",
+      "http": 200,
+      "localAssets": true,
+      "seoPresent": true
+    }
+  ],
+  "restored": true,
+  "localFallback": "PASS"
+}

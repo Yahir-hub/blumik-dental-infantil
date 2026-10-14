@@ -1,0 +1,55 @@
+{
+  "originalFallback": "PASS (empty snapshot and unavailable API)",
+  "status": "PASS",
+  "date": "2026-10-14T20:49:47.460Z",
+  "results": [
+    {
+      "slug": "home",
+      "coldMs": 61,
+      "warmMs": 31,
+      "coldCalls": 2,
+      "warmCalls": 0,
+      "bytes": 42152,
+      "outageMs": 39
+    },
+    {
+      "slug": "servicios",
+      "coldMs": 67,
+      "warmMs": 34,
+      "coldCalls": 1,
+      "warmCalls": 0,
+      "bytes": 54276,
+      "outageMs": 48
+    },
+    {
+      "slug": "preguntas-frecuentes",
+      "coldMs": 80,
+      "warmMs": 31,
+      "coldCalls": 1,
+      "warmCalls": 0,
+      "bytes": 61203,
+      "outageMs": 78
+    }
+  ],
+  "etag304": 3,
+  "snapshotVersions": [
+    {
+      "resource": "settings",
+      "version": 42
+    },
+    {
+      "resource": "home",
+      "version": 42
+    },
+    {
+      "resource": "servicios",
+      "version": 40
+    },
+    {
+      "resource": "preguntas-frecuentes",
+      "version": 40
+    }
+  ],
+  "critical": "A → B → invalidation + API down + process restart → B",
+  "evidence": "C:\\Users\\jesus\\OneDrive\\Documentos\\Proyectos Hyronix\\Panel de control\\.live-private\\blumik-sandbox\\.qa\\cache-7ntALY"
+}

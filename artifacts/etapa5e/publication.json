@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-14T20:22:23.986Z",
+  "cms": "https://hyronix-cms-staging.yahir-rp-ti.workers.dev",
+  "blumik": "https://blumik-hyronix-staging.yahir-rp-ti.workers.dev",
+  "metrics": [
+    {
+      "label": "baseline first",
+      "slug": "home",
+      "ttfb_ms": 2726
+    },
+    {
+      "label": "baseline warm",
+      "slug": "home",
+      "ttfb_ms": 660
+    },
+    {
+      "label": "baseline first",
+      "slug": "servicios",
+      "ttfb_ms": 721
+    },
+    {
+      "label": "baseline warm",
+      "slug": "servicios",
+      "ttfb_ms": 247
+    },
+    {
+      "label": "baseline first",
+      "slug": "preguntas-frecuentes",
+      "ttfb_ms": 758
+    },
+    {
+      "label": "baseline warm",
+      "slug": "preguntas-frecuentes",
+      "ttfb_ms": 456
+    },
+    {
+      "label": "published B",
+      "slug": "home",
+      "ttfb_ms": 2125
+    },
+    {
+      "label": "unavailable",
+      "slug": "home",
+      "ttfb_ms": 5832
+    },
+    {
+      "label": "unavailable",
+      "slug": "servicios",
+      "ttfb_ms": 531
+    },
+    {
+      "label": "unavailable",
+      "slug": "preguntas-frecuentes",
+      "ttfb_ms": 421
+    },
+    {
+      "label": "corrupt",
+      "slug": "home",
+      "ttfb_ms": 1449
+    },
+    {
+      "label": "corrupt",
+      "slug": "servicios",
+      "ttfb_ms": 793
+    },
+    {
+      "label": "corrupt",
+      "slug": "preguntas-frecuentes",
+      "ttfb_ms": 561
+    },
+    {
+      "label": "redeploy during outage",
+      "slug": "home",
+      "ttfb_ms": 1267
+    },
+    {
+      "label": "restored A",
+      "slug": "home",
+      "ttfb_ms": 2128
+    }
+  ],
+  "checks": [
+    {
+      "name": "automatic delivery",
+      "version": 433,
+      "event_id": "83fbfb2c-c509-4d7f-b38f-c14409baebc0",
+      "status": "delivered",
+      "attempt_count": 1,
+      "delivered_at": "2026-10-14T20:22:50.975981+00:00",
+      "elapsed_ms": 20641
+    },
+    {
+      "name": "snapshot B",
+      "status": "PASS",
+      "version": 433
+    },
+    {
+      "name": "unavailable retains B",
+      "status": "PASS"
+    },
+    {
+      "name": "corrupt retains B",
+      "status": "PASS"
+    },
+    {
+      "name": "redeploy persistence with outage",
+      "status": "PASS"
+    },
+    {
+      "name": "automatic delivery",
+      "version": 433,
+      "event_id": "83fbfb2c-c509-4d7f-b38f-c14409baebc0",
+      "status": "delivered",
+      "attempt_count": 2,
+      "delivered_at": "2026-10-14T20:24:49.68361+00:00",
+      "elapsed_ms": 41317
+    },
+    {
+      "name": "native Cron duplicate redelivery after redeploy; persisted replay and snapshot unchanged",
+      "status": "PASS",
+      "event_id": "83fbfb2c-c509-4d7f-b38f-c14409baebc0",
+      "attempts": 2
+    },
+    {
+      "name": "automatic delivery",
+      "version": 435,
+      "event_id": "97c9ee21-3e05-406d-a2a7-aade5744b772",
+      "status": "delivered",
+      "attempt_count": 1,
+      "delivered_at": "2026-10-14T20:25:51.069811+00:00",
+      "elapsed_ms": 61672
+    }
+  ],
+  "restored": true,
+  "versionB": 433,
+  "versionA": 435,
+  "databaseRestored": true
+}

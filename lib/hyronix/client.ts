@@ -9,6 +9,8 @@ import { refreshSnapshot } from './loader';
 import type { Snapshot } from './contracts';
 
 export function apiOrigin() {
+  // Runtime rollback switch; returns original JSX/settings/assets on all routes.
+  if (process.env.HYRONIX_ENABLED === 'false') return null;
   const value = process.env.HYRONIX_CONTENT_API_URL;
   if (!value) return null;
   try {

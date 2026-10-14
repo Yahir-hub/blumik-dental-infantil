@@ -1,0 +1,614 @@
+{
+  "date": "2026-10-14T20:49:37.198Z",
+  "status": "PASS",
+  "results": [
+    {
+      "case": "live",
+      "slug": "home",
+      "ttfbMs": 205,
+      "totalMs": 214,
+      "bytes": 42967,
+      "requests": 2
+    },
+    {
+      "case": "live",
+      "slug": "servicios",
+      "ttfbMs": 54,
+      "totalMs": 61,
+      "bytes": 54894,
+      "requests": 1
+    },
+    {
+      "case": "live",
+      "slug": "pacientes-neurodivergentes",
+      "ttfbMs": 53,
+      "totalMs": 59,
+      "bytes": 50814,
+      "requests": 1
+    },
+    {
+      "case": "live",
+      "slug": "preguntas-frecuentes",
+      "ttfbMs": 88,
+      "totalMs": 96,
+      "bytes": 61599,
+      "requests": 1
+    },
+    {
+      "case": "live",
+      "slug": "profesionales",
+      "ttfbMs": 45,
+      "totalMs": 53,
+      "bytes": 43619,
+      "requests": 1
+    },
+    {
+      "case": "live",
+      "slug": "contacto",
+      "ttfbMs": 48,
+      "totalMs": 56,
+      "bytes": 36160,
+      "requests": 1
+    },
+    {
+      "case": "live",
+      "slug": "aviso-de-privacidad",
+      "ttfbMs": 39,
+      "totalMs": 46,
+      "bytes": 30382,
+      "requests": 1
+    },
+    {
+      "case": "sentinel",
+      "slug": "home",
+      "status": "PASS"
+    },
+    {
+      "case": "sentinel",
+      "slug": "servicios",
+      "status": "PASS"
+    },
+    {
+      "case": "sentinel",
+      "slug": "pacientes-neurodivergentes",
+      "status": "PASS"
+    },
+    {
+      "case": "sentinel",
+      "slug": "preguntas-frecuentes",
+      "status": "PASS"
+    },
+    {
+      "case": "error-404",
+      "status": "PASS",
+      "ttfbMs": 23,
+      "totalMs": 28
+    },
+    {
+      "case": "error-429",
+      "status": "PASS",
+      "ttfbMs": 21,
+      "totalMs": 27
+    },
+    {
+      "case": "error-500",
+      "status": "PASS",
+      "ttfbMs": 20,
+      "totalMs": 27
+    },
+    {
+      "case": "error-502",
+      "status": "PASS",
+      "ttfbMs": 21,
+      "totalMs": 27
+    },
+    {
+      "case": "error-503",
+      "status": "PASS",
+      "ttfbMs": 22,
+      "totalMs": 29
+    },
+    {
+      "case": "invalid-json",
+      "status": "PASS",
+      "ttfbMs": 23,
+      "totalMs": 29
+    },
+    {
+      "case": "invalid-shape",
+      "status": "PASS",
+      "ttfbMs": 28,
+      "totalMs": 34
+    },
+    {
+      "case": "slow",
+      "status": "PASS",
+      "ttfbMs": 1224,
+      "totalMs": 1233
+    },
+    {
+      "case": "fallback",
+      "slug": "servicios",
+      "status": "PASS"
+    },
+    {
+      "case": "fallback",
+      "slug": "pacientes-neurodivergentes",
+      "status": "PASS"
+    },
+    {
+      "case": "fallback",
+      "slug": "preguntas-frecuentes",
+      "status": "PASS"
+    },
+    {
+      "case": "fallback",
+      "slug": "profesionales",
+      "status": "PASS"
+    },
+    {
+      "case": "fallback",
+      "slug": "contacto",
+      "status": "PASS"
+    },
+    {
+      "case": "fallback",
+      "slug": "aviso-de-privacidad",
+      "status": "PASS"
+    }
+  ],
+  "events": [
+    {
+      "route": "settings",
+      "status": 200,
+      "latency": 39,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "status": 200,
+      "latency": 35,
+      "operation": "refresh"
+    },
+    {
+      "route": "servicios",
+      "status": 200,
+      "latency": 14,
+      "operation": "refresh"
+    },
+    {
+      "route": "pacientes-neurodivergentes",
+      "status": 200,
+      "latency": 17,
+      "operation": "refresh"
+    },
+    {
+      "route": "preguntas-frecuentes",
+      "status": 200,
+      "latency": 15,
+      "operation": "refresh"
+    },
+    {
+      "route": "profesionales",
+      "status": 200,
+      "latency": 15,
+      "operation": "refresh"
+    },
+    {
+      "route": "contacto",
+      "status": 200,
+      "latency": 12,
+      "operation": "refresh"
+    },
+    {
+      "route": "aviso-de-privacidad",
+      "status": 200,
+      "latency": 15,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "status": 200,
+      "latency": 14,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "status": 200,
+      "latency": 20,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "status": 200,
+      "latency": 12,
+      "operation": "refresh"
+    },
+    {
+      "route": "servicios",
+      "status": 200,
+      "latency": 18,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "status": 200,
+      "latency": 9,
+      "operation": "refresh"
+    },
+    {
+      "route": "pacientes-neurodivergentes",
+      "status": 200,
+      "latency": 14,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "status": 200,
+      "latency": 10,
+      "operation": "refresh"
+    },
+    {
+      "route": "preguntas-frecuentes",
+      "status": 200,
+      "latency": 13,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "status": 200,
+      "latency": 12,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "status": 200,
+      "latency": 17,
+      "operation": "refresh"
+    },
+    {
+      "route": "servicios",
+      "status": 200,
+      "latency": 12,
+      "operation": "refresh"
+    },
+    {
+      "route": "pacientes-neurodivergentes",
+      "status": 200,
+      "latency": 14,
+      "operation": "refresh"
+    },
+    {
+      "route": "preguntas-frecuentes",
+      "status": 200,
+      "latency": 11,
+      "operation": "refresh"
+    },
+    {
+      "route": "profesionales",
+      "status": 200,
+      "latency": 13,
+      "operation": "refresh"
+    },
+    {
+      "route": "contacto",
+      "status": 200,
+      "latency": 12,
+      "operation": "refresh"
+    },
+    {
+      "route": "aviso-de-privacidad",
+      "status": 200,
+      "latency": 10,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "status": 404,
+      "latency": 5,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 5,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "home",
+      "status": 404,
+      "latency": 6,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "latency": 6,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 429,
+      "latency": 4,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 5,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "home",
+      "status": 429,
+      "latency": 6,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "latency": 6,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 500,
+      "latency": 5,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 5,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "home",
+      "status": 500,
+      "latency": 7,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "latency": 7,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 502,
+      "latency": 5,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 6,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "home",
+      "status": 502,
+      "latency": 6,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "latency": 8,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 503,
+      "latency": 8,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 8,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "home",
+      "status": 503,
+      "latency": 8,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "latency": 9,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "home",
+      "status": 200,
+      "latency": 7,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "latency": 7,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 200,
+      "latency": 9,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 9,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 200,
+      "latency": 7,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 9,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "home",
+      "status": 200,
+      "latency": 9,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "latency": 9,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 0,
+      "latency": 1207,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 1208,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "home",
+      "status": 0,
+      "latency": 1209,
+      "operation": "refresh"
+    },
+    {
+      "route": "home",
+      "latency": 1209,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "servicios",
+      "status": 503,
+      "latency": 5,
+      "operation": "refresh"
+    },
+    {
+      "route": "servicios",
+      "latency": 7,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 503,
+      "latency": 9,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 11,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 503,
+      "latency": 6,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 7,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "pacientes-neurodivergentes",
+      "status": 503,
+      "latency": 8,
+      "operation": "refresh"
+    },
+    {
+      "route": "pacientes-neurodivergentes",
+      "latency": 8,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 503,
+      "latency": 5,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 6,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "preguntas-frecuentes",
+      "status": 503,
+      "latency": 7,
+      "operation": "refresh"
+    },
+    {
+      "route": "preguntas-frecuentes",
+      "latency": 7,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "profesionales",
+      "status": 503,
+      "latency": 5,
+      "operation": "refresh"
+    },
+    {
+      "route": "profesionales",
+      "latency": 7,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 503,
+      "latency": 9,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 11,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "contacto",
+      "status": 503,
+      "latency": 4,
+      "operation": "refresh"
+    },
+    {
+      "route": "contacto",
+      "latency": 5,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 503,
+      "latency": 7,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 8,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "settings",
+      "status": 503,
+      "latency": 5,
+      "operation": "refresh"
+    },
+    {
+      "route": "settings",
+      "latency": 5,
+      "fallbackUsed": "snapshot"
+    },
+    {
+      "route": "aviso-de-privacidad",
+      "status": 503,
+      "latency": 6,
+      "operation": "refresh"
+    },
+    {
+      "route": "aviso-de-privacidad",
+      "latency": 7,
+      "fallbackUsed": "snapshot"
+    }
+  ]
+}

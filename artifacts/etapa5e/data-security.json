@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-14T08:42:09.702Z",
+  "status": "PASS",
+  "publishedMedia": true,
+  "versionedMedia": true,
+  "mediaETag": true,
+  "unpublishedMediaDenied": true,
+  "privateBucket": true,
+  "anonymousTables": [
+    "organizations",
+    "sites",
+    "pages",
+    "content_fields",
+    "media",
+    "posts",
+    "hyronix_staff",
+    "hyronix_outbox"
+  ],
+  "realUnassignedJwtIsolation": true,
+  "selfStaffPromotionDenied": true,
+  "storeRpcDeniedToUser": true,
+  "temporaryUserDeleted": true
+}

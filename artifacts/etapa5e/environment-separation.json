@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-14T21:07:43.167Z",
+  "status": "PASS",
+  "developmentKeyId": "a277da2b-1201-405d-9908-33eb6f7ef65f",
+  "stagingKeyId": "96d1c51d-0f71-4495-b1e5-284fbd248cb8",
+  "independentCredentials": true,
+  "developmentStore": "local SQLite, test secrets generated per process",
+  "stagingStore": "PostgreSQL namespace blumik-staging, KV/D1 staging",
+  "production": "template only; no resources or credentials created",
+  "sharedNonproductionDatabase": true
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-14T08:41:27.152Z",
+  "status": "PASS",
+  "browser": "Codex IAB",
+  "ownerLogin": true,
+  "pageReload": true,
+  "newProtectedSSRRequest": "/hyronix/sites",
+  "logout": true,
+  "anonymousProtectedRedirect": "/login",
+  "emailsSent": 0,
+  "note": "Page refresh and session persistence observed; no claim of waiting for token expiry."
+}

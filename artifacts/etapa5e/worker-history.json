@@ -1,0 +1,387 @@
+{
+  "date": "2026-10-14T08:25:48.569Z",
+  "versions": [
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "b912319a-6848-4b87-9077-96c77a9b2e42",
+      "created": "2026-10-13T11:44:19.110042Z",
+      "modules": 3,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "14362232-619b-409b-b716-4776eaa88e22",
+      "created": "2026-10-13T06:29:37.475742Z",
+      "modules": 3,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "9c59223a-f7a2-4f64-a027-3fa6fcb23101",
+      "created": "2026-10-13T01:32:44.436089Z",
+      "modules": 3,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "e8c40033-a7e1-41d0-8eac-595239ceff52",
+      "created": "2026-10-13T01:24:01.937534Z",
+      "modules": 3,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "a0f36a10-2d16-4b68-8960-16ecba4513c3",
+      "created": "2026-10-13T01:22:18.635714Z",
+      "modules": 3,
+      "matchesCurrentAdmin": true,
+      "literalNames": [
+        "SUPABASE_SECRET_KEY"
+      ],
+      "modernSecretLiteral": true,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "949ed0e2-79e7-4f6a-b017-c647b8ed8699",
+      "created": "2026-10-13T01:20:06.695857Z",
+      "modules": 3,
+      "matchesCurrentAdmin": true,
+      "literalNames": [
+        "SUPABASE_SECRET_KEY"
+      ],
+      "modernSecretLiteral": true,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "ece5862a-90c2-4d72-808a-212839fce5aa",
+      "created": "2026-10-12T16:17:31.359584Z",
+      "modules": 3,
+      "matchesCurrentAdmin": true,
+      "literalNames": [
+        "SUPABASE_SECRET_KEY"
+      ],
+      "modernSecretLiteral": true,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "8267ce78-0782-48f6-befd-cf2f4d5abde1",
+      "created": "2026-10-12T16:15:18.148148Z",
+      "modules": 3,
+      "matchesCurrentAdmin": true,
+      "literalNames": [
+        "SUPABASE_SECRET_KEY"
+      ],
+      "modernSecretLiteral": true,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "a42b2f7c-dbda-4a02-8e39-d2f61385ad10",
+      "created": "2026-10-12T10:07:56.312945Z",
+      "modules": 3,
+      "matchesCurrentAdmin": true,
+      "literalNames": [
+        "SUPABASE_SECRET_KEY"
+      ],
+      "modernSecretLiteral": true,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "hyronix-cms-staging",
+      "id": "e1d2409c-cd5c-4e61-b6b3-fc642b3dffcd",
+      "created": "2026-10-12T10:06:15.762605Z",
+      "modules": 3,
+      "matchesCurrentAdmin": true,
+      "literalNames": [
+        "SUPABASE_SECRET_KEY"
+      ],
+      "modernSecretLiteral": true,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "03012ef6-8f96-4d96-b62c-614c00be3b3f",
+      "created": "2026-10-14T08:24:51.383763Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "d3d1668c-3d7d-43b5-b4cf-a8585c4c50fa",
+      "created": "2026-10-14T08:24:14.328998Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "8ae42acd-0ce7-4751-85ce-4eaccfb3237a",
+      "created": "2026-10-14T08:22:33.560979Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "39629b0e-bdfd-4e1d-a20b-6dbf285a6b83",
+      "created": "2026-10-14T08:22:23.621346Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "8e54dfdf-66a9-4353-83d1-68b28c020cc3",
+      "created": "2026-10-14T08:21:24.12618Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "6bdbf9bf-a4f6-47a5-b503-53c68299fad7",
+      "created": "2026-10-14T08:20:45.932116Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "40b9c5a2-bf1f-434f-8c58-82a2ee706f9b",
+      "created": "2026-10-13T11:46:01.1425Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "85c0a2f8-957e-4e6f-8510-19dd1493b1c3",
+      "created": "2026-10-13T11:45:54.735549Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "61b15db7-59ab-495d-8f47-d85e24f5895b",
+      "created": "2026-10-13T11:45:16.831171Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "84934135-2809-445f-9dcb-df4d5056fa56",
+      "created": "2026-10-13T11:45:11.894792Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "5e33267f-79b2-459b-9f23-c9a2f6063a12",
+      "created": "2026-10-13T11:45:08.181197Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "879305b2-aaf9-45e2-9f69-8058e14f29d7",
+      "created": "2026-10-13T11:44:16.397595Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "cbc796fc-25b4-4f0c-8472-82839f90cb4f",
+      "created": "2026-10-13T11:43:31.537015Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "83188061-9615-4863-9c70-dc209906591a",
+      "created": "2026-10-13T06:47:58.460976Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "2d517a40-7107-4a4d-b7d3-acd530ca5b47",
+      "created": "2026-10-13T06:31:08.635038Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "63b13956-2745-4009-b768-04645fafbc65",
+      "created": "2026-10-13T06:30:59.43994Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "17929a51-c885-410f-b119-bfa97488d5e0",
+      "created": "2026-10-13T06:30:20.787235Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "6fb899e5-8d07-4349-a90d-f35409f94f90",
+      "created": "2026-10-13T06:30:17.0325Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "8fb7bd82-6087-48d9-8d51-7486686c2945",
+      "created": "2026-10-13T06:30:10.896028Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "31df32ae-7771-4e59-bb34-c219c972d693",
+      "created": "2026-10-13T06:29:35.121957Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "b669c4a8-53eb-4d79-bca7-92975d1e192a",
+      "created": "2026-10-13T06:29:01.625967Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "9e9ae4db-c599-422a-bbcc-0bfb36875ce4",
+      "created": "2026-10-13T01:25:35.655073Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "ca9ebdd7-8701-45d6-9a04-a45379997a9e",
+      "created": "2026-10-13T01:22:16.170922Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "6cb6125c-6a85-4ad7-9083-5085e75713a0",
+      "created": "2026-10-13T01:20:56.286044Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "14bf1366-4881-4735-9d51-8816d93d722e",
+      "created": "2026-10-12T16:17:28.737898Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "f3a4e7e5-24b9-4228-8e8d-d3d6de8d3fc9",
+      "created": "2026-10-12T16:16:33.095673Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    },
+    {
+      "worker": "blumik-hyronix-staging",
+      "id": "e833f963-c505-465c-961d-9e5deac7896d",
+      "created": "2026-10-12T10:10:15.842406Z",
+      "modules": 1,
+      "matchesCurrentAdmin": false,
+      "literalNames": [],
+      "modernSecretLiteral": false,
+      "managementTokenLiteral": false
+    }
+  ]
+}

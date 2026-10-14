@@ -1,11 +1,13 @@
 import type { NextConfig } from 'next';
+import { guardEnvironment } from './scripts/guard-environment.mjs';
+guardEnvironment(process.env);
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
   turbopack: {
     root: process.cwd(),
-    resolveAlias: process.env.HYRONIX_ENVIRONMENT === 'staging'
+    resolveAlias: ['staging','production'].includes(process.env.HYRONIX_ENVIRONMENT ?? '')
       ? { '@/lib/hyronix/local-store': './lib/hyronix/disabled-local-store.ts' }
       : {},
   },
