@@ -183,6 +183,14 @@ try {
       bytes: warm.bytes,
     });
   }
+  // A failed/unsigned webhook must not invalidate. The safety TTL still recovers.
+  mode = 'SAFETY'; version=41;
+  const rejected=await fetch('http://127.0.0.1:3004/api/hyronix/revalidate',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
+  assert.equal(rejected.status,401);
+  await new Promise(r=>setTimeout(r,2200));
+  await page('home');
+  await new Promise(r=>setTimeout(r,350));
+  assert.ok((await page('home')).html.includes('Texto SAFETY'),'TTL recovers a missed webhook');
   mode = 'B';
   version = 42;
   await invalidate();
@@ -234,6 +242,7 @@ try {
   }
   const report = {
     originalFallback: 'PASS (empty snapshot and unavailable API)',
+    failedWebhookSafetyTTL: 'PASS (equivalent 2-second safety TTL; final config unchanged)',
     status: 'PASS',
     date: new Date().toISOString(),
     results,

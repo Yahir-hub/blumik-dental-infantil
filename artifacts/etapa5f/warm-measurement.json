@@ -1,0 +1,4650 @@
+{
+  "phase": "warm",
+  "started": "2026-10-15T08:02:13.539Z",
+  "ended": "2026-10-15T08:02:40.350Z",
+  "requests": 300,
+  "concurrency": 5,
+  "metrics": [
+    {
+      "path": "/",
+      "n": 76,
+      "p50": 149,
+      "p95": 741,
+      "p99": 2156,
+      "max": 2156
+    },
+    {
+      "path": "/servicios",
+      "n": 75,
+      "p50": 145,
+      "p95": 681,
+      "p99": 2110,
+      "max": 2110
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "n": 75,
+      "p50": 159,
+      "p95": 728,
+      "p99": 1739,
+      "max": 1739
+    },
+    {
+      "path": "/contacto",
+      "n": 37,
+      "p50": 154,
+      "p95": 182,
+      "p99": 435,
+      "max": 435
+    },
+    {
+      "path": "/profesionales",
+      "n": 37,
+      "p50": 148,
+      "p95": 680,
+      "p99": 686,
+      "max": 686
+    }
+  ],
+  "errors": [],
+  "logs": {
+    "events": 82,
+    "coverage": "Observed tail events; provider may sample. Counts are observed, not complete billing totals.",
+    "outcomes": [
+      "ok"
+    ],
+    "cacheReads": 164,
+    "cacheHits": 157,
+    "cacheWrites": 6,
+    "refreshCount": 7,
+    "timing": [
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051333190,
+        "ms": 213
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051333190,
+        "ms": 221
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051333190,
+        "ms": 945
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051333190,
+        "ms": 946
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051334443,
+        "ms": 57
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051334443,
+        "ms": 57
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051334443,
+        "ms": 57
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051334443,
+        "ms": 57
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051333205,
+        "ms": 237
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051333205,
+        "ms": 260
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051333205,
+        "ms": 1437
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051333205,
+        "ms": 1444
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051334727,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051334727,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051334727,
+        "ms": 76
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051334727,
+        "ms": 219
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051333534,
+        "ms": 101
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051333534,
+        "ms": 101
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051333534,
+        "ms": 1149
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051333534,
+        "ms": 1169
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051335044,
+        "ms": 82
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051335044,
+        "ms": 82
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051335044,
+        "ms": 82
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051335044,
+        "ms": 82
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051335252,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051335252,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051335252,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051335252,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051335258,
+        "ms": 84
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051335258,
+        "ms": 84
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051335258,
+        "ms": 85
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051335258,
+        "ms": 85
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051335547,
+        "ms": 67
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051335547,
+        "ms": 67
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051335547,
+        "ms": 134
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051335547,
+        "ms": 134
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051335610,
+        "ms": 89
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051335610,
+        "ms": 89
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051335610,
+        "ms": 89
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051335610,
+        "ms": 89
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051335889,
+        "ms": 58
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051335889,
+        "ms": 58
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051335889,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051335889,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051335907,
+        "ms": 74
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051335907,
+        "ms": 74
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051335907,
+        "ms": 75
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051335907,
+        "ms": 75
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051336149,
+        "ms": 57
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051336149,
+        "ms": 57
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051336149,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051336149,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051336415,
+        "ms": 57
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051336415,
+        "ms": 57
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051336415,
+        "ms": 58
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051336415,
+        "ms": 58
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051336100,
+        "ms": 78
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051336100,
+        "ms": 78
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051336100,
+        "ms": 78
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051336100,
+        "ms": 78
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051336617,
+        "ms": 73
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051336617,
+        "ms": 73
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051336617,
+        "ms": 73
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051336617,
+        "ms": 73
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051336698,
+        "ms": 60
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051336698,
+        "ms": 60
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051336698,
+        "ms": 71
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051336698,
+        "ms": 71
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051336976,
+        "ms": 81
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051336976,
+        "ms": 81
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051336976,
+        "ms": 93
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051336976,
+        "ms": 93
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051337269,
+        "ms": 58
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051337269,
+        "ms": 58
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051337269,
+        "ms": 60
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051337269,
+        "ms": 60
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051337175,
+        "ms": 80
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051337175,
+        "ms": 80
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051337175,
+        "ms": 80
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051337175,
+        "ms": 80
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051337704,
+        "ms": 63
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051337704,
+        "ms": 63
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "contacto",
+        "start": 1792051337704,
+        "ms": 64
+      },
+      {
+        "operation": "resource",
+        "resource": "contacto",
+        "start": 1792051337704,
+        "ms": 64
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051337723,
+        "ms": 93
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051337723,
+        "ms": 93
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051337723,
+        "ms": 93
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051337723,
+        "ms": 93
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051338762,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051338762,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051338762,
+        "ms": 72
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051338762,
+        "ms": 72
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051339246,
+        "ms": 69
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051339246,
+        "ms": 69
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051339246,
+        "ms": 75
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051339246,
+        "ms": 75
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051340304,
+        "ms": 69
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051340304,
+        "ms": 69
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051340304,
+        "ms": 69
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051340304,
+        "ms": 69
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051340929,
+        "ms": 72
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051340929,
+        "ms": 72
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051340929,
+        "ms": 89
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051340929,
+        "ms": 89
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051340875,
+        "ms": 73
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051340875,
+        "ms": 73
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051340875,
+        "ms": 73
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051340875,
+        "ms": 73
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051341337,
+        "ms": 63
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051341337,
+        "ms": 63
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051341337,
+        "ms": 74
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051341337,
+        "ms": 74
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051341857,
+        "ms": 79
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051341857,
+        "ms": 79
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051341857,
+        "ms": 79
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051341857,
+        "ms": 79
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051342018,
+        "ms": 54
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051342018,
+        "ms": 54
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "contacto",
+        "start": 1792051342018,
+        "ms": 58
+      },
+      {
+        "operation": "resource",
+        "resource": "contacto",
+        "start": 1792051342018,
+        "ms": 58
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051342123,
+        "ms": 75
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051342123,
+        "ms": 75
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051342123,
+        "ms": 75
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051342123,
+        "ms": 75
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051342445,
+        "ms": 74
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051342445,
+        "ms": 74
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051342445,
+        "ms": 75
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051342445,
+        "ms": 75
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051342497,
+        "ms": 83
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051342497,
+        "ms": 83
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051342497,
+        "ms": 83
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051342497,
+        "ms": 83
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051343078,
+        "ms": 56
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051343078,
+        "ms": 56
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051343078,
+        "ms": 62
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051343078,
+        "ms": 62
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051342930,
+        "ms": 88
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051342930,
+        "ms": 88
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051342930,
+        "ms": 89
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051342930,
+        "ms": 89
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051343060,
+        "ms": 86
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051343060,
+        "ms": 86
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051343060,
+        "ms": 86
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051343060,
+        "ms": 86
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051344136,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051344136,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051344136,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051344136,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051344419,
+        "ms": 87
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051344419,
+        "ms": 87
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051344419,
+        "ms": 87
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051344419,
+        "ms": 87
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051345007,
+        "ms": 55
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051345007,
+        "ms": 55
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "contacto",
+        "start": 1792051345007,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "contacto",
+        "start": 1792051345007,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051345196,
+        "ms": 64
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051345196,
+        "ms": 64
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051345196,
+        "ms": 77
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051345196,
+        "ms": 77
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051345458,
+        "ms": 67
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051345458,
+        "ms": 67
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051345458,
+        "ms": 67
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051345458,
+        "ms": 67
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051345493,
+        "ms": 63
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051345493,
+        "ms": 63
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051345493,
+        "ms": 70
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051345493,
+        "ms": 70
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051345708,
+        "ms": 68
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051345708,
+        "ms": 68
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051345708,
+        "ms": 71
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051345708,
+        "ms": 71
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051345770,
+        "ms": 63
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051345770,
+        "ms": 63
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051345770,
+        "ms": 176
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051345770,
+        "ms": 176
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051346034,
+        "ms": 60
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051346034,
+        "ms": 60
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346034,
+        "ms": 74
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346034,
+        "ms": 74
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051346270,
+        "ms": 67
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051346270,
+        "ms": 67
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346270,
+        "ms": 67
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346270,
+        "ms": 67
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051346303,
+        "ms": 58
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051346303,
+        "ms": 58
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346303,
+        "ms": 58
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346303,
+        "ms": 58
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346520,
+        "ms": 66
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346520,
+        "ms": 66
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051346520,
+        "ms": 76
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051346520,
+        "ms": 76
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051346224,
+        "ms": 93
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051346224,
+        "ms": 93
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346224,
+        "ms": 93
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346224,
+        "ms": 93
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051346341,
+        "ms": 96
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051346341,
+        "ms": 96
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346341,
+        "ms": 96
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346341,
+        "ms": 96
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051346671,
+        "ms": 74
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051346671,
+        "ms": 74
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346671,
+        "ms": 77
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346671,
+        "ms": 77
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051346786,
+        "ms": 65
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051346786,
+        "ms": 65
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346786,
+        "ms": 80
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346786,
+        "ms": 80
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051346930,
+        "ms": 68
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051346930,
+        "ms": 68
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051346930,
+        "ms": 70
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051346930,
+        "ms": 70
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051347050,
+        "ms": 66
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051347050,
+        "ms": 66
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347050,
+        "ms": 67
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347050,
+        "ms": 67
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347066,
+        "ms": 61
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347066,
+        "ms": 61
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "contacto",
+        "start": 1792051347066,
+        "ms": 64
+      },
+      {
+        "operation": "resource",
+        "resource": "contacto",
+        "start": 1792051347066,
+        "ms": 64
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051347174,
+        "ms": 71
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051347174,
+        "ms": 71
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347174,
+        "ms": 79
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347174,
+        "ms": 79
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347301,
+        "ms": 62
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347301,
+        "ms": 62
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051347301,
+        "ms": 62
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051347301,
+        "ms": 62
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347313,
+        "ms": 78
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347313,
+        "ms": 78
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051347313,
+        "ms": 82
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051347313,
+        "ms": 82
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051347546,
+        "ms": 74
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051347546,
+        "ms": 74
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347546,
+        "ms": 75
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347546,
+        "ms": 75
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347593,
+        "ms": 58
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347593,
+        "ms": 58
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051347593,
+        "ms": 59
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051347593,
+        "ms": 59
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051347844,
+        "ms": 64
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051347844,
+        "ms": 64
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347844,
+        "ms": 67
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347844,
+        "ms": 67
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "contacto",
+        "start": 1792051347922,
+        "ms": 61
+      },
+      {
+        "operation": "resource",
+        "resource": "contacto",
+        "start": 1792051347922,
+        "ms": 61
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051347922,
+        "ms": 76
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051347922,
+        "ms": 76
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051348353,
+        "ms": 93
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051348353,
+        "ms": 93
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051348353,
+        "ms": 93
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051348353,
+        "ms": 93
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051349041,
+        "ms": 89
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051349041,
+        "ms": 89
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051349041,
+        "ms": 89
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051349041,
+        "ms": 89
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051349153,
+        "ms": 70
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051349153,
+        "ms": 70
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051349153,
+        "ms": 72
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051349153,
+        "ms": 72
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051349622,
+        "ms": 71
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051349622,
+        "ms": 71
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051349622,
+        "ms": 72
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051349622,
+        "ms": 72
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051349932,
+        "ms": 78
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051349932,
+        "ms": 78
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051349932,
+        "ms": 78
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051349932,
+        "ms": 78
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051349901,
+        "ms": 77
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051349901,
+        "ms": 77
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051349901,
+        "ms": 90
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051349901,
+        "ms": 90
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051350199,
+        "ms": 56
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051350199,
+        "ms": 56
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051350199,
+        "ms": 61
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051350199,
+        "ms": 61
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051349880,
+        "ms": 93
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051349880,
+        "ms": 93
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051349880,
+        "ms": 94
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051349880,
+        "ms": 94
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051350544,
+        "ms": 83
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051350544,
+        "ms": 83
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051350544,
+        "ms": 83
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051350544,
+        "ms": 83
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051350940,
+        "ms": 83
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051350940,
+        "ms": 83
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051350940,
+        "ms": 83
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051350940,
+        "ms": 83
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "profesionales",
+        "start": 1792051350975,
+        "ms": 64
+      },
+      {
+        "operation": "resource",
+        "resource": "profesionales",
+        "start": 1792051350975,
+        "ms": 64
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051350975,
+        "ms": 77
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051350975,
+        "ms": 77
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "contacto",
+        "start": 1792051350957,
+        "ms": 73
+      },
+      {
+        "operation": "resource",
+        "resource": "contacto",
+        "start": 1792051350957,
+        "ms": 73
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051350957,
+        "ms": 77
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051350957,
+        "ms": 77
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051350974,
+        "ms": 83
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051350974,
+        "ms": 83
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051350974,
+        "ms": 83
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051350974,
+        "ms": 83
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051351545,
+        "ms": 76
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051351545,
+        "ms": 76
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051351545,
+        "ms": 76
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051351545,
+        "ms": 76
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "contacto",
+        "start": 1792051352036,
+        "ms": 69
+      },
+      {
+        "operation": "resource",
+        "resource": "contacto",
+        "start": 1792051352036,
+        "ms": 69
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051352036,
+        "ms": 74
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051352036,
+        "ms": 74
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051352175,
+        "ms": 80
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051352175,
+        "ms": 80
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051352175,
+        "ms": 84
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051352175,
+        "ms": 84
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051352626,
+        "ms": 57
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051352626,
+        "ms": 57
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051352626,
+        "ms": 64
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051352626,
+        "ms": 64
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051352734,
+        "ms": 73
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051352734,
+        "ms": 73
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051352734,
+        "ms": 81
+      },
+      {
+        "operation": "resource",
+        "resource": "preguntas-frecuentes",
+        "start": 1792051352734,
+        "ms": 81
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "servicios",
+        "start": 1792051353105,
+        "ms": 64
+      },
+      {
+        "operation": "resource",
+        "resource": "servicios",
+        "start": 1792051353105,
+        "ms": 64
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051353105,
+        "ms": 64
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051353105,
+        "ms": 64
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "settings",
+        "start": 1792051353140,
+        "ms": 65
+      },
+      {
+        "operation": "resource",
+        "resource": "settings",
+        "start": 1792051353140,
+        "ms": 65
+      },
+      {
+        "operation": "snapshot_read",
+        "resource": "home",
+        "start": 1792051353140,
+        "ms": 78
+      },
+      {
+        "operation": "resource",
+        "resource": "home",
+        "start": 1792051353140,
+        "ms": 78
+      }
+    ],
+    "refresh": [
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 885,
+        "operation": "refresh"
+      },
+      {
+        "route": "servicios",
+        "status": 304,
+        "latency": 873,
+        "operation": "refresh"
+      },
+      {
+        "route": "home",
+        "status": 0,
+        "latency": 1354,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 1382,
+        "operation": "refresh"
+      },
+      {
+        "route": "profesionales",
+        "status": 304,
+        "latency": 162,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 1149,
+        "operation": "refresh"
+      },
+      {
+        "route": "servicios",
+        "status": 304,
+        "latency": 1169,
+        "operation": "refresh"
+      }
+    ],
+    "cacheTimings": [
+      60,
+      73,
+      2,
+      3,
+      62,
+      83,
+      2,
+      57,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      6,
+      0,
+      0,
+      2,
+      3,
+      0,
+      0,
+      3,
+      4,
+      3,
+      3,
+      0,
+      0,
+      0,
+      3,
+      2,
+      3,
+      3,
+      3,
+      2,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      2,
+      3,
+      4,
+      0,
+      0,
+      0,
+      3,
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      0,
+      3,
+      3,
+      0,
+      0,
+      0,
+      0,
+      3,
+      3,
+      0,
+      0,
+      2,
+      3,
+      3,
+      3,
+      2,
+      3,
+      3,
+      4,
+      2,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      2,
+      3,
+      3,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      3,
+      4,
+      2,
+      3,
+      4,
+      4,
+      3,
+      4,
+      0,
+      2,
+      5,
+      5,
+      0,
+      2,
+      2,
+      3,
+      4,
+      5,
+      3,
+      3,
+      3,
+      4,
+      0,
+      0,
+      0,
+      4,
+      7,
+      7,
+      0,
+      0,
+      3,
+      4,
+      0,
+      0,
+      3,
+      4,
+      0,
+      0,
+      0,
+      0,
+      3,
+      4,
+      3,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      4,
+      0,
+      3,
+      2,
+      2,
+      0,
+      4,
+      3,
+      4,
+      3,
+      3
+    ],
+    "cpu": {
+      "n": 82,
+      "p50": 25,
+      "p95": 323,
+      "p99": 393,
+      "max": 393
+    }
+  },
+  "samples": [
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 1481,
+      "total": 1495,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 1739,
+      "total": 1741,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 182,
+      "total": 195,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 2156,
+      "total": 2168,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 2046,
+      "total": 2059,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 2110,
+      "total": 2130,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 299,
+      "total": 315,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 435,
+      "total": 448,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 217,
+      "total": 234,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 468,
+      "total": 482,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 151,
+      "total": 167,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 274,
+      "total": 287,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 142,
+      "total": 157,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 681,
+      "total": 697,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 175,
+      "total": 193,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 231,
+      "total": 234,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 535,
+      "total": 549,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 158,
+      "total": 172,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 141,
+      "total": 155,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 462,
+      "total": 486,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 195,
+      "total": 201,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 155,
+      "total": 176,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 148,
+      "total": 164,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 145,
+      "total": 157,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 133,
+      "total": 146,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 137,
+      "total": 149,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 180,
+      "total": 192,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 768,
+      "total": 781,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 176,
+      "total": 188,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 139,
+      "total": 149,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 205,
+      "total": 219,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 168,
+      "total": 181,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 143,
+      "total": 155,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 163,
+      "total": 175,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 164,
+      "total": 176,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 150,
+      "total": 160,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 174,
+      "total": 187,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 164,
+      "total": 174,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 139,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 143,
+      "total": 156,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 140,
+      "total": 154,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 638,
+      "total": 652,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 164,
+      "total": 178,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 163,
+      "total": 177,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 162,
+      "total": 177,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 144,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 152,
+      "total": 166,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 148,
+      "total": 161,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 120,
+      "total": 134,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 641,
+      "total": 653,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 148,
+      "total": 160,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 178,
+      "total": 190,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 124,
+      "total": 137,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 162,
+      "total": 164,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 129,
+      "total": 140,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 161,
+      "total": 175,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 237,
+      "total": 253,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 557,
+      "total": 574,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 145,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 132,
+      "total": 147,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 162,
+      "total": 175,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 196,
+      "total": 211,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 172,
+      "total": 184,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 140,
+      "total": 141,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 160,
+      "total": 171,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 173,
+      "total": 175,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 146,
+      "total": 160,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 135,
+      "total": 148,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 159,
+      "total": 173,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 147,
+      "total": 149,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 145,
+      "total": 155,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 167,
+      "total": 181,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 142,
+      "total": 157,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 138,
+      "total": 140,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 698,
+      "total": 715,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 129,
+      "total": 143,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 180,
+      "total": 192,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 156,
+      "total": 158,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 164,
+      "total": 181,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 139,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 138,
+      "total": 140,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 132,
+      "total": 133,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 172,
+      "total": 188,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 146,
+      "total": 148,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 161,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 141,
+      "total": 152,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 148,
+      "total": 160,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 597,
+      "total": 609,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 157,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 142,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 149,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 146,
+      "total": 147,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 132,
+      "total": 142,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 145,
+      "total": 158,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 115,
+      "total": 125,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 473,
+      "total": 475,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 159,
+      "total": 161,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 178,
+      "total": 179,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 307,
+      "total": 308,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 144,
+      "total": 156,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 136,
+      "total": 149,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 680,
+      "total": 691,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 159,
+      "total": 160,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 117,
+      "total": 131,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 128,
+      "total": 144,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 144,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 136,
+      "total": 150,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 148,
+      "total": 150,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 158,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 145,
+      "total": 145,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 150,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 132,
+      "total": 144,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 122,
+      "total": 136,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 193,
+      "total": 194,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 151,
+      "total": 164,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 125,
+      "total": 140,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 255,
+      "total": 256,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 135,
+      "total": 136,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 158,
+      "total": 174,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 146,
+      "total": 157,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 145,
+      "total": 158,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 134,
+      "total": 148,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 130,
+      "total": 131,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 181,
+      "total": 193,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 139,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 165,
+      "total": 165,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 178,
+      "total": 195,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 175,
+      "total": 190,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 199,
+      "total": 200,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 193,
+      "total": 194,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 149,
+      "total": 151,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 155,
+      "total": 170,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 150,
+      "total": 150,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 145,
+      "total": 156,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 124,
+      "total": 138,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 502,
+      "total": 504,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 173,
+      "total": 174,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 145,
+      "total": 146,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 554,
+      "total": 555,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 160,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 122,
+      "total": 135,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 149,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 140,
+      "total": 142,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 166,
+      "total": 166,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 125,
+      "total": 137,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 163,
+      "total": 164,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 173,
+      "total": 185,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 158,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 201,
+      "total": 214,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 175,
+      "total": 176,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 154,
+      "total": 157,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 140,
+      "total": 152,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 146,
+      "total": 147,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 141,
+      "total": 143,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 238,
+      "total": 241,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 164,
+      "total": 166,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 156,
+      "total": 158,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 144,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 148,
+      "total": 163,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 151,
+      "total": 167,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 127,
+      "total": 145,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 769,
+      "total": 785,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 172,
+      "total": 174,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 152,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 159,
+      "total": 160,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 140,
+      "total": 142,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 167,
+      "total": 168,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 180,
+      "total": 182,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 1068,
+      "total": 1089,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 145,
+      "total": 146,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 130,
+      "total": 148,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 149,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 143,
+      "total": 151,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 184,
+      "total": 188,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 139,
+      "total": 154,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 671,
+      "total": 672,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 129,
+      "total": 144,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 247,
+      "total": 249,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 297,
+      "total": 309,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 177,
+      "total": 195,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 162,
+      "total": 164,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 182,
+      "total": 183,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 139,
+      "total": 140,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 122,
+      "total": 137,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 138,
+      "total": 151,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 138,
+      "total": 151,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 694,
+      "total": 707,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 122,
+      "total": 137,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 523,
+      "total": 524,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 147,
+      "total": 161,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 155,
+      "total": 156,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 141,
+      "total": 156,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 146,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 135,
+      "total": 150,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 142,
+      "total": 143,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 141,
+      "total": 143,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 122,
+      "total": 134,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 171,
+      "total": 173,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 159,
+      "total": 172,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 143,
+      "total": 155,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 124,
+      "total": 136,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 163,
+      "total": 176,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 145,
+      "total": 156,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 181,
+      "total": 182,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 122,
+      "total": 135,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 151,
+      "total": 163,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 158,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 134,
+      "total": 149,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 186,
+      "total": 188,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 118,
+      "total": 135,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 158,
+      "total": 160,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 143,
+      "total": 145,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 148,
+      "total": 151,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 150,
+      "total": 169,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 270,
+      "total": 297,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 160,
+      "total": 163,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 135,
+      "total": 154,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 175,
+      "total": 177,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 164,
+      "total": 167,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 143,
+      "total": 145,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 162,
+      "total": 164,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 148,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 142,
+      "total": 158,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 500,
+      "total": 517,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 129,
+      "total": 142,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 139,
+      "total": 150,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 154,
+      "total": 168,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 152,
+      "total": 163,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 156,
+      "total": 157,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 127,
+      "total": 128,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 178,
+      "total": 191,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 187,
+      "total": 188,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 139,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 173,
+      "total": 187,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 159,
+      "total": 161,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 134,
+      "total": 152,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 123,
+      "total": 141,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 156,
+      "total": 157,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 208,
+      "total": 210,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 140,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 228,
+      "total": 243,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 132,
+      "total": 146,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 137,
+      "total": 151,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 135,
+      "total": 136,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 686,
+      "total": 698,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 142,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 197,
+      "total": 198,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 142,
+      "total": 144,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 133,
+      "total": 146,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 130,
+      "total": 131,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 728,
+      "total": 742,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 153,
+      "total": 166,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 143,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 157,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 146,
+      "total": 148,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 118,
+      "total": 134,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 159,
+      "total": 172,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 153,
+      "total": 156,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 152,
+      "total": 168,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 450,
+      "total": 464,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 145,
+      "total": 159,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 166,
+      "total": 168,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 139,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 170,
+      "total": 171,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 143,
+      "total": 144,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 190,
+      "total": 191,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 150,
+      "total": 151,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 155,
+      "total": 163,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 149,
+      "total": 166,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 123,
+      "total": 138,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 132,
+      "total": 145,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 152,
+      "total": 153,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 193,
+      "total": 210,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 121,
+      "total": 135,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 151,
+      "total": 152,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 821,
+      "total": 823,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 324,
+      "total": 335,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 155,
+      "total": 158,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 170,
+      "total": 181,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 741,
+      "total": 742,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 153,
+      "total": 165,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 129,
+      "total": 142,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 154,
+      "total": 171,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 133,
+      "total": 133,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 144,
+      "total": 157,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 163,
+      "total": 164,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 171,
+      "total": 187,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 135,
+      "total": 147,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 158,
+      "total": 169,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 133,
+      "total": 146,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 149,
+      "total": 161,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 184,
+      "total": 185,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 150,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 152,
+      "total": 154,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 153,
+      "total": 170,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 161,
+      "total": 162,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 184,
+      "total": 185,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 140,
+      "total": 141,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 149,
+      "total": 150,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 157,
+      "total": 158,
+      "draft": false,
+      "valid": true
+    }
+  ]
+}

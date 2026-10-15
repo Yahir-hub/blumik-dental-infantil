@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-15T08:06:29.458Z",
+  "status": "PASS",
+  "results": [
+    "real shared CAS 42 wins over 41; separate HTTP requests",
+    "one concurrent lease; forged complete denied; persisted duplicate; old version obsolete",
+    "real shared token bucket reaches limit across independent requests"
+  ],
+  "temporaryNamespaceRemoved": true
+}

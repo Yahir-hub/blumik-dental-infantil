@@ -10,6 +10,9 @@ export function guardEnvironment(env,config) {
    if(/gtvwovlcotccpfgmhcas|staging|localhost|127\.0\.0\.1/i.test(env[name]??''))throw Error('PRODUCTION_USES_NONPRODUCTION_CONFIG_'+name);
   }
   if(config&&(config.vars?.HYRONIX_ENVIRONMENT!=='production'||/staging/.test(config.name)||config.vars?.HYRONIX_STAGING_HARNESS_ENABLED==='true'))throw Error('PRODUCTION_PROVIDER_CONFIG_MISMATCH');
+  const serialized=JSON.stringify({env,config});
+  for(const forbidden of ['gtvwovlcotccpfgmhcas','de160f978b3e4fcb927106159704c410','633eb158-1731-4adb-8321-2f07c15c6db5','hyronix-cms-staging','blumik-hyronix-staging','blumik-staging'])
+    if(serialized.includes(forbidden))throw Error('PRODUCTION_CONTAINS_STAGING_RESOURCE');
  }
  return stage;
 }

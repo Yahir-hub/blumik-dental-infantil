@@ -13,7 +13,7 @@
     "HYRONIX_ENVIRONMENT": "staging",
     "HYRONIX_CONTENT_API_URL": "https://hyronix-cms-staging.yahir-rp-ti.workers.dev/api/content/v1",
     "HYRONIX_SITE_KEY": "site_6103c2457d57421188c5f0a71138bec0",
-    "HYRONIX_CONTENT_REVALIDATE_SECONDS": "60",
+    "HYRONIX_CONTENT_REVALIDATE_SECONDS": "7200",
     "HYRONIX_STORE_DRIVER": "postgres",
     "HYRONIX_STORE_NAMESPACE": "blumik-staging",
     "HYRONIX_PREWARM": "true"

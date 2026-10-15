@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-15T08:21:12.415Z",
+  "staging": "PASS",
+  "productionReady": false,
+  "blocker": "WORKERS_FREE_CPU_CAPACITY",
+  "bindings": {
+    "HYRONIX_CONTENT_REVALIDATE_SECONDS": "7200",
+    "HYRONIX_ENVIRONMENT": "staging"
+  },
+  "contentRestored": true,
+  "rollbackRestored": true,
+  "productionModified": false,
+  "mainMerged": false,
+  "customDomainConfigured": false,
+  "purchases": false
+}

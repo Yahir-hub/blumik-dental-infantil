@@ -1,0 +1,83 @@
+{
+  "selected": [
+    {
+      "fields": [],
+      "name": "AccountD1AnalyticsAdaptiveGroupsFilter_InputObject"
+    },
+    {
+      "fields": [
+        {
+          "description": "The number of read queries.",
+          "name": "readQueries"
+        },
+        {
+          "description": "The number of rows your queries read.",
+          "name": "rowsRead"
+        },
+        {
+          "description": "The number of rows your queries wrote.",
+          "name": "rowsWritten"
+        },
+        {
+          "description": "The number of write queries.",
+          "name": "writeQueries"
+        }
+      ],
+      "name": "AccountD1AnalyticsAdaptiveGroupsSum"
+    },
+    {
+      "fields": [
+        {
+          "description": "Confidence interval for the corresponding point estimate",
+          "name": "readQueries"
+        },
+        {
+          "description": "Confidence interval for the corresponding point estimate",
+          "name": "rowsRead"
+        },
+        {
+          "description": "Confidence interval for the corresponding point estimate",
+          "name": "rowsWritten"
+        },
+        {
+          "description": "Confidence interval for the corresponding point estimate",
+          "name": "writeQueries"
+        }
+      ],
+      "name": "AccountD1AnalyticsAdaptiveGroupsSumConfidence"
+    },
+    {
+      "fields": [
+        {
+          "description": "CPU time 25th percentile - microseconds",
+          "name": "cpuTimeP25"
+        },
+        {
+          "description": "CPU time 50th percentile - microseconds",
+          "name": "cpuTimeP50"
+        },
+        {
+          "description": "CPU time 75th percentile - microseconds",
+          "name": "cpuTimeP75"
+        },
+        {
+          "description": "CPU time 90th percentile - microseconds",
+          "name": "cpuTimeP90"
+        },
+        {
+          "description": "CPU time 95th percentile - microseconds",
+          "name": "cpuTimeP95"
+        },
+        {
+          "description": "CPU time 99th percentile - microseconds",
+          "name": "cpuTimeP99"
+        },
+        {
+          "description": "CPU time 99.9th percentile - microseconds",
+          "name": "cpuTimeP999"
+        }
+      ],
+      "name": "AccountWorkersInvocationsAdaptiveQuantiles"
+    }
+  ]
+}

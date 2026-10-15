@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-15T08:03:52.074Z",
+  "cms": "https://hyronix-cms-staging.yahir-rp-ti.workers.dev",
+  "blumik": "https://blumik-hyronix-staging.yahir-rp-ti.workers.dev",
+  "metrics": [
+    {
+      "label": "baseline first",
+      "slug": "home",
+      "ttfb_ms": 953
+    },
+    {
+      "label": "baseline warm",
+      "slug": "home",
+      "ttfb_ms": 329
+    },
+    {
+      "label": "baseline first",
+      "slug": "servicios",
+      "ttfb_ms": 318
+    },
+    {
+      "label": "baseline warm",
+      "slug": "servicios",
+      "ttfb_ms": 162
+    },
+    {
+      "label": "baseline first",
+      "slug": "preguntas-frecuentes",
+      "ttfb_ms": 276
+    },
+    {
+      "label": "baseline warm",
+      "slug": "preguntas-frecuentes",
+      "ttfb_ms": 220
+    },
+    {
+      "label": "published B",
+      "slug": "home",
+      "ttfb_ms": 1605
+    },
+    {
+      "label": "unavailable",
+      "slug": "home",
+      "ttfb_ms": 748
+    },
+    {
+      "label": "unavailable",
+      "slug": "servicios",
+      "ttfb_ms": 798
+    },
+    {
+      "label": "unavailable",
+      "slug": "preguntas-frecuentes",
+      "ttfb_ms": 223
+    },
+    {
+      "label": "B after bounded outage load",
+      "slug": "home",
+      "ttfb_ms": 1141
+    },
+    {
+      "label": "corrupt",
+      "slug": "home",
+      "ttfb_ms": 305
+    },
+    {
+      "label": "corrupt",
+      "slug": "servicios",
+      "ttfb_ms": 175
+    },
+    {
+      "label": "corrupt",
+      "slug": "preguntas-frecuentes",
+      "ttfb_ms": 1324
+    },
+    {
+      "label": "durable read during outage",
+      "slug": "home",
+      "ttfb_ms": 955
+    },
+    {
+      "label": "restored A",
+      "slug": "home",
+      "ttfb_ms": 985
+    }
+  ],
+  "checks": [
+    {
+      "name": "automatic delivery",
+      "version": 437,
+      "event_id": "e34bfaf8-39bc-408e-8665-08e20bf3a71f",
+      "status": "delivered",
+      "attempt_count": 1,
+      "delivered_at": "2026-10-15T08:04:50.256911+00:00",
+      "elapsed_ms": 62355
+    },
+    {
+      "name": "snapshot B",
+      "status": "PASS",
+      "version": 437
+    },
+    {
+      "name": "unavailable retains B",
+      "status": "PASS"
+    },
+    {
+      "name": "corrupt retains B",
+      "status": "PASS"
+    },
+    {
+      "name": "durable snapshot persists across fault modes",
+      "status": "PASS"
+    },
+    {
+      "name": "automatic delivery",
+      "version": 437,
+      "event_id": "e34bfaf8-39bc-408e-8665-08e20bf3a71f",
+      "status": "delivered",
+      "attempt_count": 2,
+      "delivered_at": "2026-10-15T08:05:49.537913+00:00",
+      "elapsed_ms": 10543
+    },
+    {
+      "name": "native Cron duplicate redelivery; persisted replay and snapshot unchanged",
+      "status": "PASS",
+      "event_id": "e34bfaf8-39bc-408e-8665-08e20bf3a71f",
+      "attempts": 2
+    },
+    {
+      "name": "automatic delivery",
+      "version": 439,
+      "event_id": "689af729-cfe9-4d37-beab-ade77bd0d0c9",
+      "status": "delivered",
+      "attempt_count": 1,
+      "delivered_at": "2026-10-15T08:06:50.351378+00:00",
+      "elapsed_ms": 61819
+    }
+  ],
+  "restored": true,
+  "versionB": 437,
+  "publishToVisibleMs": 68774,
+  "safetyTTLSeconds": 7200,
+  "versionA": 439,
+  "databaseRestored": true
+}

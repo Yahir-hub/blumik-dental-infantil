@@ -1,0 +1,56 @@
+{
+  "originalFallback": "PASS (empty snapshot and unavailable API)",
+  "failedWebhookSafetyTTL": "PASS (equivalent 2-second safety TTL; final config unchanged)",
+  "status": "PASS",
+  "date": "2026-10-15T07:57:04.260Z",
+  "results": [
+    {
+      "slug": "home",
+      "coldMs": 76,
+      "warmMs": 30,
+      "coldCalls": 2,
+      "warmCalls": 0,
+      "bytes": 42152,
+      "outageMs": 43
+    },
+    {
+      "slug": "servicios",
+      "coldMs": 57,
+      "warmMs": 47,
+      "coldCalls": 1,
+      "warmCalls": 0,
+      "bytes": 54276,
+      "outageMs": 49
+    },
+    {
+      "slug": "preguntas-frecuentes",
+      "coldMs": 122,
+      "warmMs": 29,
+      "coldCalls": 1,
+      "warmCalls": 0,
+      "bytes": 61203,
+      "outageMs": 94
+    }
+  ],
+  "etag304": 3,
+  "snapshotVersions": [
+    {
+      "resource": "settings",
+      "version": 42
+    },
+    {
+      "resource": "home",
+      "version": 42
+    },
+    {
+      "resource": "servicios",
+      "version": 40
+    },
+    {
+      "resource": "preguntas-frecuentes",
+      "version": 40
+    }
+  ],
+  "critical": "A → B → invalidation + API down + process restart → B",
+  "evidence": "/home/jesus/hyronix-5f/blumik/.qa/cache-CCfSfx"
+}

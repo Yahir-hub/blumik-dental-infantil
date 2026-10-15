@@ -1,5 +1,13 @@
 # Resiliencia de contenido e imágenes — decisión 5E
 
+## Decisión vigente 5F — opción C implementada
+
+15-10-2026: edge cache larga + URLs versionadas, sin replicación de bytes. Solo GET de media publicada con versión positiva explícita y respuesta 200 image/*, sin Set-Cookie, entra en Cache API. Cache-Control: `public, max-age=31536000, s-maxage=31536000, immutable`. Respuestas no exitosas siguen no-store. Cache API es local al punto de presencia y puede expulsar objetos.
+
+La migración 018 asegura que reemplazar storage_path incremente asset_version e impide fijar arbitrariamente otra versión. Las policies existentes no permiten sobrescribir bytes de un path a usuarios normales. La prueba real A→B compara hashes: contenido referencia v2; v1 conserva A en el edge; v999 devuelve 404 no-store. Fixture eliminado. Evidencia `artifacts/etapa5f/media-live.json`.
+
+**ACCEPTED_RISK inicial Blumik:** una imagen nueva nunca cacheada o expulsada puede no conservar sus bytes en una caída total del origen. Además, una imagen antes pública puede seguir en caché tras retirarla; immutable no es revocación inmediata. No usar esta capa para material confidencial. La recomendación 5E que sigue queda como contexto histórico, ya ejecutada en 5F.
+
 ## Media visual existente: PASS
 
 Chrome real mediante Playwright, tras hidratación: imagen remota válida → fixture remota HTTP 503 → `onError` → `/assets/IMG_8415.webp` visible. Contenedor conservado, CLS observado 0,00169, conteo de errores estable, sin errores React no controlados. Capturas inspeccionadas: `artifacts/etapa5e/media-before.png` y `media-after.png`. Resultado estructurado: `media-browser.json`.

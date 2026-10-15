@@ -1,0 +1,26 @@
+{
+  "$schema":"node_modules/wrangler/config-schema.json",
+  "name":"blumik-hyronix-production",
+  "account_id":"REPLACE_PRODUCTION_ACCOUNT_ID",
+  "main":".open-next/worker.js",
+  "compatibility_date":"2026-10-12",
+  "compatibility_flags":["nodejs_compat","global_fetch_strictly_public"],
+  "workers_dev":false,
+  "preview_urls":false,
+  "build":{"command":"node scripts/validate-production-config.mjs wrangler.production.jsonc"},
+  "assets":{"directory":".open-next/assets","binding":"ASSETS"},
+  "vars":{
+    "HYRONIX_ENVIRONMENT":"production",
+    "HYRONIX_ENABLED":"true",
+    "HYRONIX_CONTENT_API_URL":"https://REPLACE_CMS_HOST/api/content/v1",
+    "HYRONIX_SITE_KEY":"REPLACE_PRODUCTION_PUBLIC_SITE_KEY",
+    "HYRONIX_CONTENT_REVALIDATE_SECONDS":"7200",
+    "HYRONIX_STORE_DRIVER":"postgres",
+    "HYRONIX_STORE_URL":"https://REPLACE_PRODUCTION_REF.supabase.co",
+    "HYRONIX_STORE_PUBLISHABLE_KEY":"REPLACE_PRODUCTION_PUBLISHABLE_KEY",
+    "HYRONIX_STORE_NAMESPACE":"blumik-production",
+    "HYRONIX_PREWARM":"true"
+  },
+  "kv_namespaces":[{"binding":"NEXT_INC_CACHE_KV","id":"REPLACE_PRODUCTION_KV_ID"}],
+  "d1_databases":[{"binding":"NEXT_TAG_CACHE_D1","database_name":"blumik-production-tags","database_id":"REPLACE_PRODUCTION_D1_ID"}]
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-15T08:08:30.453Z",
+  "status": "PASS",
+  "httpChecks": 26,
+  "pagesCompared": 7,
+  "media": true,
+  "etag": true,
+  "nextClient": true,
+  "nextFallback": true,
+  "phpAdapter": true,
+  "phpFallback": true,
+  "ssrHtml": true
+}

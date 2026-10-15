@@ -27,7 +27,10 @@ export class PostgresStore implements SnapshotStore, WebhookReplayStore {
   private scope(site: string) { if (site !== this.config.site) throw Error('STORE_SITE_MISMATCH'); }
   async get(site: string, resource: string): Promise<Snapshot | null> {
     this.scope(site);
-    const value = await this.rpc('get', { resource });
+    const started=Date.now();
+    const value = await this.rpc('get', { resource }).finally(()=>{
+      if(process.env.HYRONIX_ENVIRONMENT==='staging')console.info('[Hyronix timing]',JSON.stringify({operation:'snapshot_read',resource,start:started,ms:Date.now()-started}));
+    });
     if (value === null) return null;
     if (!validStored(value, site, resource)) throw Error('INVALID_STORED_SNAPSHOT');
     return value;

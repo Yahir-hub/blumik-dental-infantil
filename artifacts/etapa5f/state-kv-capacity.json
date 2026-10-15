@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-15T08:13:41.736Z",
+  "status": "PASS",
+  "build": "vZO1_5RUOfqftBBXB1VuW",
+  "kvEntries": [
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/0051c3facaa0d7f8acf680016ddfaf35c3a3a5fbe198b00b69963d709de0f260.fetch",
+      "bytes": 1091
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/03413993ac6d1787f527024215ffb23cdf443eb904bb6ca9daebdf510a05367d.fetch",
+      "bytes": 6345,
+      "lastModified": 1792051335028
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/0ed2dbc023447585542f57a6d4aaf1414e8d9836d61d120a95ab152eb2155394.fetch",
+      "bytes": 9885,
+      "lastModified": 1792051334946
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/1094820977817eea8f9760ff7cdaf4eea6d90acebbd5c370ed64ef5609e467e1.fetch",
+      "bytes": 11875
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/15ec0c478ace213861034a34749a9ba0a6042071ad50909d29e8ea352603fcc9.fetch",
+      "bytes": 13828
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/1f277fc96220b9f130bb760981c4b1257fd2356968aeb34cdbf02d1d99335d8d.fetch",
+      "bytes": 12218,
+      "lastModified": 1792051615534
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/2d46640eb9e2761fbdc01987bd2d728db94f7cceadca76d794cf29109b66669f.fetch",
+      "bytes": 9831
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/2f212337b5ec7fe714fdc2dfa33935dd98272f56d241b23362a2893e38a33aca.fetch",
+      "bytes": 9934
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/4de8983c416739cc18aeb73764ffff43d5359e3f1b501bd24fd2ebc01b3f773d.fetch",
+      "bytes": 1091
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/692ee5d687e16ba186b764e9232464f11d4d862ee4ef26ffb18eb2de56859f4d.fetch",
+      "bytes": 1154
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/72022aa23537d461914434529b859e41349fd465d67602606d81836d77b46655.fetch",
+      "bytes": 12257
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/73cd8c9bbbc5e29f1e0fc6a8a8c7d75fe915d7c0c8c454f98be7e1e3884e7dc1.fetch",
+      "bytes": 11881,
+      "lastModified": 1792051333543
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/7ba52ed7eb5836b36138363365cf9c8c1f11daad8ea559cb324c4c482d49a20f.fetch",
+      "bytes": 13883,
+      "lastModified": 1792051334703
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/8a991623c490d442a0741d14393a3c33be25fea65b099f641085f792a88bb1f6.fetch",
+      "bytes": 1138,
+      "lastModified": 1792051614830
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/98c377a7d704eebb2372ab72a585136e6322527d2f2f1ba7dae7cbaabbe97617.fetch",
+      "bytes": 13905
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/9ac6df1f7cc677266d7dfb77489f29967f422d2daa08f86b8d360bd92b809b39.fetch",
+      "bytes": 9917,
+      "lastModified": 1792051614761
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/bcebab9c333e729b49e44025500f217620c47110b43584c2012c4d79d55cbb82.fetch",
+      "bytes": 11875
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/c2e4c98f8915e868c5d30e88b6b5242ad5bf32d8f91358f9ceb8b662d8cfb8a0.fetch",
+      "bytes": 7690,
+      "lastModified": 1792051616686
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/c8a03d7edba1baf295ec5ab522addab8f4ede72fbb937cff26a4a528c3897fb7.fetch",
+      "bytes": 9831
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/cd055ef6cfa4e4b37f5a6095115097527ebc6f658416ff337998102f2b277784.fetch",
+      "bytes": 6366
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/cf4ae9a95fa9c325236c6b6f8d8975f40ae51780eb30c60afd3b15d4423ae8d5.fetch",
+      "bytes": 7722
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/dd5cac86bf01149078c3f3442eb7c648c1d4fe9325c70837070b4689ccee2d0e.fetch",
+      "bytes": 11914
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/e1b69e8c14efcc8c87c5ced438c62c69c3fec7f18f90435d288438e7e1adce79.fetch",
+      "bytes": 9911
+    },
+    {
+      "key": "incremental-cache/vZO1_5RUOfqftBBXB1VuW/e3a8ee5ab4b065bb71bb009df672639be2eac21f52f4cf619d122ace37843c97.fetch",
+      "bytes": 13828
+    }
+  ],
+  "db": {
+    "database_bytes": 14309043,
+    "media_bytes": "7980052",
+    "media_objects": 26,
+    "snapshots": 8,
+    "draft_snapshots": 0,
+    "failed_events": 0,
+    "fixtures_remaining": 0
+  },
+  "snapshotSizes": [
+    {
+      "resource": "aviso-de-privacidad",
+      "bytes": 7364,
+      "version": 439
+    },
+    {
+      "resource": "contacto",
+      "bytes": 5985,
+      "version": 435
+    },
+    {
+      "resource": "home",
+      "bytes": 9482,
+      "version": 439
+    },
+    {
+      "resource": "pacientes-neurodivergentes",
+      "bytes": 11730,
+      "version": 439
+    },
+    {
+      "resource": "preguntas-frecuentes",
+      "bytes": 11389,
+      "version": 435
+    },
+    {
+      "resource": "profesionales",
+      "bytes": 9413,
+      "version": 435
+    },
+    {
+      "resource": "servicios",
+      "bytes": 13293,
+      "version": 435
+    },
+    {
+      "resource": "settings",
+      "bytes": 972,
+      "version": 439
+    }
+  ],
+  "migrations": [
+    "202610090001",
+    "202610090002",
+    "202610090003",
+    "202610090004",
+    "202610090005",
+    "202610090006",
+    "202610090007",
+    "202610090008",
+    "202610090009",
+    "202610090010",
+    "202610090011",
+    "202610090012",
+    "202610100013",
+    "202610100014",
+    "202610100015",
+    "202610110016",
+    "202610120017",
+    "202610140018"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-15T08:04:12.739Z",
+  "status": "PASS",
+  "cleanup": true,
+  "versionA": 1,
+  "versionB": 2,
+  "oldBytesStillCached": true,
+  "newPublishedReference": true,
+  "errorNoStore": true,
+  "bytesCompared": true
+}

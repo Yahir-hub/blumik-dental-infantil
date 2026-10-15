@@ -1,0 +1,630 @@
+{
+  "phase": "baseline",
+  "started": "2026-10-14T22:04:51.823Z",
+  "ended": "2026-10-14T22:05:04.518Z",
+  "requests": 60,
+  "concurrency": 5,
+  "metrics": [
+    {
+      "path": "/",
+      "n": 16,
+      "p50": 225,
+      "p95": 2195,
+      "p99": 2195,
+      "max": 2195
+    },
+    {
+      "path": "/servicios",
+      "n": 15,
+      "p50": 240,
+      "p95": 2237,
+      "p99": 2237,
+      "max": 2237
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "n": 15,
+      "p50": 255,
+      "p95": 2213,
+      "p99": 2213,
+      "max": 2213
+    },
+    {
+      "path": "/contacto",
+      "n": 7,
+      "p50": 240,
+      "p95": 532,
+      "p99": 532,
+      "max": 532
+    },
+    {
+      "path": "/profesionales",
+      "n": 7,
+      "p50": 234,
+      "p95": 360,
+      "p99": 360,
+      "max": 360
+    }
+  ],
+  "errors": [],
+  "logs": {
+    "events": 13,
+    "outcomes": [
+      "ok"
+    ],
+    "cacheReads": 26,
+    "cacheHits": 26,
+    "cacheWrites": 14,
+    "refreshCount": 14,
+    "timing": [],
+    "refresh": [
+      {
+        "route": "servicios",
+        "status": 304,
+        "latency": 1053,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 1079,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 1154,
+        "operation": "refresh"
+      },
+      {
+        "route": "servicios",
+        "status": 304,
+        "latency": 1161,
+        "operation": "refresh"
+      },
+      {
+        "route": "preguntas-frecuentes",
+        "status": 304,
+        "latency": 372,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 376,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 371,
+        "operation": "refresh"
+      },
+      {
+        "route": "contacto",
+        "status": 304,
+        "latency": 300,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 1140,
+        "operation": "refresh"
+      },
+      {
+        "route": "preguntas-frecuentes",
+        "status": 304,
+        "latency": 1150,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 1081,
+        "operation": "refresh"
+      },
+      {
+        "route": "home",
+        "status": 304,
+        "latency": 1645,
+        "operation": "refresh"
+      },
+      {
+        "route": "home",
+        "status": 304,
+        "latency": 1068,
+        "operation": "refresh"
+      },
+      {
+        "route": "settings",
+        "status": 304,
+        "latency": 1660,
+        "operation": "refresh"
+      }
+    ],
+    "cpuAvailable": true
+  },
+  "samples": [
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 1365,
+      "total": 1371,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 1235,
+      "total": 1249,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 450,
+      "total": 453,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 532,
+      "total": 534,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 2195,
+      "total": 2197,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 2213,
+      "total": 2216,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 228,
+      "total": 240,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 2237,
+      "total": 2248,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 355,
+      "total": 367,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 240,
+      "total": 254,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 232,
+      "total": 245,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 240,
+      "total": 253,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 267,
+      "total": 279,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 566,
+      "total": 578,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 221,
+      "total": 233,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 260,
+      "total": 271,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 213,
+      "total": 223,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 232,
+      "total": 245,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 222,
+      "total": 237,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 220,
+      "total": 231,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 240,
+      "total": 251,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 231,
+      "total": 242,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 240,
+      "total": 261,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 234,
+      "total": 245,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 254,
+      "total": 256,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 275,
+      "total": 290,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 225,
+      "total": 237,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 219,
+      "total": 231,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 547,
+      "total": 559,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 255,
+      "total": 257,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 231,
+      "total": 233,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 223,
+      "total": 224,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 211,
+      "total": 225,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 208,
+      "total": 222,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 229,
+      "total": 241,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 215,
+      "total": 228,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 250,
+      "total": 251,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 224,
+      "total": 246,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 247,
+      "total": 259,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 225,
+      "total": 237,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 579,
+      "total": 591,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 225,
+      "total": 226,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 215,
+      "total": 226,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 217,
+      "total": 229,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 245,
+      "total": 257,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 385,
+      "total": 396,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 315,
+      "total": 326,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 360,
+      "total": 371,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 243,
+      "total": 255,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 1011,
+      "total": 1025,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 214,
+      "total": 227,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 209,
+      "total": 220,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 217,
+      "total": 230,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/contacto",
+      "status": 200,
+      "ttfb": 224,
+      "total": 225,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/profesionales",
+      "status": 200,
+      "ttfb": 217,
+      "total": 227,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 225,
+      "total": 236,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 550,
+      "total": 561,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/servicios",
+      "status": 200,
+      "ttfb": 242,
+      "total": 254,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/preguntas-frecuentes",
+      "status": 200,
+      "ttfb": 224,
+      "total": 233,
+      "draft": false,
+      "valid": true
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "ttfb": 211,
+      "total": 222,
+      "draft": false,
+      "valid": true
+    }
+  ]
+}

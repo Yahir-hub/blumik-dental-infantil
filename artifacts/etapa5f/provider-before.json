@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-15T08:01:54.214Z",
+  "phase": "before",
+  "workers": {
+    "http": 200,
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "workersInvocationsAdaptive": []
+          }
+        ]
+      }
+    },
+    "errors": []
+  },
+  "kv": {
+    "http": 200,
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "kvOperationsAdaptiveGroups": [
+              {
+                "dimensions": {
+                  "actionType": "write"
+                },
+                "sum": {
+                  "requests": 18
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": []
+  }
+}

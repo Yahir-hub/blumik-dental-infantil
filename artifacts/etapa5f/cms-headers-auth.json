@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-15T08:00:57.077Z",
+  "status": "PASS",
+  "results": [
+    {
+      "path": "/login",
+      "status": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": "DENY",
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "authenticated": false
+    },
+    {
+      "path": "/dashboard",
+      "status": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": "DENY",
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "authenticated": true
+    },
+    {
+      "path": "/hyronix",
+      "status": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": "DENY",
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "authenticated": true
+    },
+    {
+      "path": "/api/content/v1/health",
+      "status": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": "DENY",
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "authenticated": false
+    }
+  ],
+  "robotsDisallow": true,
+  "authMethod": "Real Supabase owner session via administrative link verification; no email, password change or persisted session; SSR cookies used over HTTPS"
+}

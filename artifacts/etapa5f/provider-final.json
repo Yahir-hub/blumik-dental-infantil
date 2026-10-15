@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-15T08:11:12.439Z",
+  "phase": "final",
+  "workers": {
+    "http": 200,
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "workersInvocationsAdaptive": [
+              {
+                "dimensions": {
+                  "status": "success"
+                },
+                "quantiles": {
+                  "cpuTimeP50": 23873,
+                  "cpuTimeP99": 346134
+                },
+                "sum": {
+                  "errors": 0,
+                  "requests": 401,
+                  "subrequests": 937
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": []
+  },
+  "kv": {
+    "http": 200,
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "kvOperationsAdaptiveGroups": [
+              {
+                "dimensions": {
+                  "actionType": "list"
+                },
+                "sum": {
+                  "requests": 1
+                }
+              },
+              {
+                "dimensions": {
+                  "actionType": "read"
+                },
+                "sum": {
+                  "requests": 817
+                }
+              },
+              {
+                "dimensions": {
+                  "actionType": "write"
+                },
+                "sum": {
+                  "requests": 37
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": []
+  },
+  "d1": {
+    "http": 200,
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "d1AnalyticsAdaptiveGroups": [
+              {
+                "sum": {
+                  "readQueries": 630,
+                  "rowsRead": 3750,
+                  "rowsWritten": 12,
+                  "writeQueries": 6
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": []
+  },
+  "cms": {
+    "http": 200,
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "workersInvocationsAdaptive": [
+              {
+                "dimensions": {
+                  "status": "clientDisconnected"
+                },
+                "quantiles": {
+                  "cpuTimeP50": 238680,
+                  "cpuTimeP99": 238680
+                },
+                "sum": {
+                  "errors": 0,
+                  "requests": 1,
+                  "subrequests": 1
+                }
+              },
+              {
+                "dimensions": {
+                  "status": "success"
+                },
+                "quantiles": {
+                  "cpuTimeP50": 2705,
+                  "cpuTimeP99": 235568
+                },
+                "sum": {
+                  "errors": 0,
+                  "requests": 688,
+                  "subrequests": 580
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": []
+  }
+}

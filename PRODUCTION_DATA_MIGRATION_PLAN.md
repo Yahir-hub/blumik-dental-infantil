@@ -1,0 +1,16 @@
+# Migración DEV → PROD — plan, no ejecutado
+
+15 de octubre de 2026. Requiere autorización de etapa 6. No existe un proyecto Supabase productivo creado por esta etapa.
+
+1. Crear proyecto independiente y registrar región, ref, URL y plan autorizado. Nuevas publishable/secret keys; secret solo CMS server-side. Configurar Auth/URLs y correo según el destino aprobado entonces. No reutilizar DEV.
+2. Aplicar las **18 migraciones versionadas** en orden, primero entorno de prueba y dry-run revisado. Verificar RLS, funciones SECURITY DEFINER/search_path, Storage privado `cms-media` 10 MB y JPG/PNG/WEBP/AVIF. La migración 018 fija `asset_version`: solo cambia al cambiar `storage_path`, no por un valor arbitrario del cliente.
+3. La migración 017 contiene nombres históricos `private.staging_*` y RPC `hyronix_staging_store`. Son estructuras parametrizadas, no incluyen credenciales ni consumidores. Mantener compatibilidad, crear un consumidor **nuevo** `blumik-production`, capability aleatoria nueva y únicamente su hash en DB. No copiar ninguna fila staging. Una futura renombrada sería otra migración, no editar historia aplicada.
+4. Crear al propietario de forma segura y comprobar profile. Con operación privilegiada asignar `hyronix_staff.role=admin`. No copiar passwords, JWT ni auth.users desde DEV. No asignar privilegios mediante metadata editable.
+5. Exportar mediante allowlist únicamente organización/sitio editorial Blumik, páginas/secciones/campos publicados, settings, SEO y media efectivamente publicada. Excluir borradores. Generar IDs productivos y un mapa de referencias; `draft_value` inicial puede igualarse al published importado, nunca a drafts DEV. Remapear imágenes en campos, repeaters, SEO y posts publicados si existen.
+6. Mantener API deshabilitada mientras se importa. Subir bytes a paths nuevos `organization/site/file`, comparar hash/tamaño/MIME; conservar URLs versionadas correctas. Importar configuración editorial/protecciones, no referencias al dominio staging. Registrar una revisión inicial propia de producción.
+7. **Excluir** audit_logs/revisions de pruebas, outbox DEV, replay/rate-limit state, snapshots, usuarios temporales, memberships de pruebas y secretos. No copiar dumps completos. Guardar manifiesto sanitizado y hashes, no tokens.
+8. Crear KV y D1 independientes; configurar plantillas production, HMAC nuevo, token store nuevo, runner y URL de webhook autorizada. Validar que ningún ref/ID/URL/namespace staging sobreviva. Compilar con valores públicos productivos y escanear artefactos antes de desplegar.
+9. Activar API/publicación solamente tras validar el import. Obtener snapshots nuevos desde la API productiva; no importar snapshots staging. Comprobar 7 rutas, contenido/SEO/FAQ JSON-LD, media A/B, auth/roles, RLS, no-draft, headers, outbox/Cron/HMAC y rollback antes del cutover.
+10. Registrar backup/export previo y versión anterior del sitio. Hacer publicación reversible A→B→A y reconciliar manifiesto. Autorizar cutover en etapa 6; cPanel será operado por el propietario cuando corresponda. DNS/dominio/deploy productivo requieren esa autorización y no se ejecutaron aquí.
+
+No se necesitan Blumik de prueba, Daijon ni otras organizaciones seed en producción. Retención y backups deben definirse según el plan elegido; Free no se presenta como un servicio con backups automáticos/SLA.

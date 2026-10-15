@@ -38,10 +38,11 @@ export async function refreshSnapshot(
   resource: string,
   store: SnapshotStore,
   fetcher: typeof fetch = fetch,
+  previousRead?: Promise<Snapshot | null>,
 ): Promise<Snapshot> {
   const start = Date.now();
   let status = 0;
-  const previous = await store.get(site, resource);
+  const previous = await (previousRead ?? store.get(site, resource));
   try {
     const path = resource === 'settings' ? '' : '/pages/' + resource;
     const response = await fetcher(

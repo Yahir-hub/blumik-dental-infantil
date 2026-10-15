@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-15T08:04:33.127Z",
+  "phase": "after",
+  "workers": {
+    "http": 200,
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "workersInvocationsAdaptive": [
+              {
+                "dimensions": {
+                  "status": "success"
+                },
+                "quantiles": {
+                  "cpuTimeP50": 21800,
+                  "cpuTimeP99": 346134
+                },
+                "sum": {
+                  "errors": 0,
+                  "requests": 302,
+                  "subrequests": 616
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": []
+  },
+  "kv": {
+    "http": 200,
+    "data": {
+      "viewer": {
+        "accounts": [
+          {
+            "kvOperationsAdaptiveGroups": [
+              {
+                "dimensions": {
+                  "actionType": "read"
+                },
+                "sum": {
+                  "requests": 499
+                }
+              },
+              {
+                "dimensions": {
+                  "actionType": "write"
+                },
+                "sum": {
+                  "requests": 30
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "errors": []
+  }
+}

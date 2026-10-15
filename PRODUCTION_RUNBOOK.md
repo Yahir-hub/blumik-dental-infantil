@@ -1,5 +1,17 @@
 # Runbook de preparación e incidentes
 
+## Actualización 5F — 15 de octubre de 2026
+
+Build/deploy Linux, headers CMS, media versionada y plantillas productivas ya implementados/certificados. Ver `FINAL_PREPRODUCTION_REPORT.md`. **Producción sigue NO por CPU de Workers Free**; no se contrató nada. Las secciones 5E inferiores son históricas cuando indican que estas correcciones aún faltan.
+
+TTL safety 7.200 s; frescura primaria por eventos. Comprobar lag outbox <3 min; no reducir TTL a 60 s para solucionar un webhook roto. Nunca borrar snapshots para forzar refresh. Antes de un cambio registrar valores y versión; restaurar mediante publicación, conservando audit/outbox.
+
+El scheduler admite configuración production independiente validada, probada solo con transporte mock; staging mantiene allowlist fija. Las plantillas `wrangler.production.jsonc` tienen placeholders y deben fallar hasta configurarse. No son una autorización ni un deployment. El proyecto/secretos/KV/D1/namespace productivos serán nuevos.
+
+**Construir y desplegar en el mismo Linux**: los artefactos OpenNext pueden contener imports WASM absolutos. No transportar a Wrangler Windows para desplegar. El script `deploy-linux-5f.mjs` está limitado a los dos Workers staging y reutiliza la sesión OAuth en memoria; no usarlo para producción. El build CMS requiere sus variables públicas del navegador; los secretos permanecen en bindings runtime.
+
+Operación diaria/semanal y umbrales exactos en `PRODUCTION_CAPACITY_BUDGET.md`. Si se necesita retirar urgentemente una imagen pública, recordar que immutable puede conservar versiones antiguas en cachés; no asumir que soft-delete revoca todas las copias.
+
 14 de octubre de 2026. **Plantilla operativa; producción no creada ni autorizada.**
 
 ## Estado y prerrequisitos

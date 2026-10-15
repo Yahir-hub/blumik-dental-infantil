@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-15T08:06:59.160Z",
+  "status": "PASS",
+  "results": [
+    {
+      "route": "home",
+      "http": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": null,
+        "content-security-policy": null,
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "noindex": true,
+      "canonical": true
+    },
+    {
+      "route": "servicios",
+      "http": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": null,
+        "content-security-policy": null,
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "noindex": true,
+      "canonical": true
+    },
+    {
+      "route": "pacientes-neurodivergentes",
+      "http": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": null,
+        "content-security-policy": null,
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "noindex": true,
+      "canonical": true
+    },
+    {
+      "route": "preguntas-frecuentes",
+      "http": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": null,
+        "content-security-policy": null,
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "noindex": true,
+      "canonical": true
+    },
+    {
+      "route": "profesionales",
+      "http": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": null,
+        "content-security-policy": null,
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "noindex": true,
+      "canonical": true
+    },
+    {
+      "route": "contacto",
+      "http": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": null,
+        "content-security-policy": null,
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "noindex": true,
+      "canonical": true
+    },
+    {
+      "route": "aviso-de-privacidad",
+      "http": 200,
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": null,
+        "content-security-policy": null,
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "noindex": true,
+      "canonical": true
+    },
+    {
+      "route": "CMS login",
+      "headers": {
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "camera=(), microphone=(), geolocation=()",
+        "x-frame-options": "DENY",
+        "content-security-policy": null,
+        "x-robots-tag": "noindex, nofollow"
+      },
+      "noindex": true
+    },
+    {
+      "name": "unsigned",
+      "http": 401
+    },
+    {
+      "name": "bad signature",
+      "http": 401
+    },
+    {
+      "name": "body limit",
+      "http": 413
+    },
+    {
+      "name": "content type",
+      "http": 415
+    },
+    {
+      "name": "internal unauthenticated",
+      "http": 401
+    }
+  ],
+  "robotsDisallow": true,
+  "anonymousRedirect": true,
+  "signedWebhook": "See native Cron delivery in publication.json; existing HMAC not rotated or extracted",
+  "missingHeadersAreNotAssumedPresent": true
+}

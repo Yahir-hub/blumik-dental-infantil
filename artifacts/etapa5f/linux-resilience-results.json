@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "date": "2026-10-15T01:39:25.125Z",
+  "checks": [
+    "A→B→outage retains B",
+    "corrupt JSON/schema/draft rejected",
+    "version CAS and concurrent writes",
+    "snapshot restart durable locally",
+    "ETag 304",
+    "HMAC and time window",
+    "body/type/schema/site/slug allowlists",
+    "duplicate/concurrent/restart replay",
+    "per-resource ordering",
+    "failure releases lease",
+    "rate limit and Retry-After"
+  ]
+}

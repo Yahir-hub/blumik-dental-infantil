@@ -8,8 +8,9 @@ import type { IncrementalCache } from '@opennextjs/aws/types/overrides.js';
 const observedCache: IncrementalCache = {
   name: kvCache.name,
   async get(key, type) {
+    const start=Date.now();
     const entry = await kvCache.get(key, type);
-    if (type === 'fetch') console.info('[Hyronix cache]', JSON.stringify({ operation: 'get', hit: !!entry, ageMs: entry?.lastModified ? Date.now() - entry.lastModified : null, clockDelta: performance.timeOrigin + performance.now() - Date.now() }));
+    if (type === 'fetch') console.info('[Hyronix cache]', JSON.stringify({ operation: 'get', hit: !!entry, ms:Date.now()-start, ageMs: entry?.lastModified ? Date.now() - entry.lastModified : null }));
     return entry;
   },
   async set(key, value, type) {

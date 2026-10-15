@@ -1,5 +1,13 @@
 # Caché y revalidación — implementación real ETAPA 5C
 
+## Actualización vigente 5F — 15-10-2026
+
+El TTL vigente es **7.200 segundos**, centralizado en `HYRONIX_CONTENT_REVALIDATE_SECONDS`; reemplaza las cifras de 60 s de la evidencia histórica inferior. Frescura primaria por outbox/Cron/HMAC. B visible en 68,774 s; restauración exacta, LKG con 503/corrupto y rollback PASS. La prueba Linux equivalente de TTL 2 s recupera una entrega fallida.
+
+KV y snapshot autoritativo se leen en paralelo; la promesa del snapshot se reutiliza en refresh/fallback. Se mantiene CAS para evitar retrocesos y React/cache para deduplicar metadata/settings. KV es regenerable, PostgreSQL es durable; no se agregó filesystem serverless ni breaker global. Presupuesto base 192 writes/día con margen de concurrencia, medido con carga acotada; ver `PRODUCTION_CAPACITY_BUDGET.md`. Free no se aprueba por CPU, aunque KV sí queda dentro del presupuesto inicial.
+
+La media publicada/versionada tiene edge cache immutable de un año y errores no-store; ver `MEDIA_RESILIENCE_DECISION.md`. Los textos siguientes describen la implementación original de 5C cuando mencionen otro TTL.
+
 Fecha: 2026-10-11. Sustituye la propuesta de 5B; el reporte 5B permanece como evidencia histórica.
 
 ## Semántica verificada en Next.js16.4.0 instalado

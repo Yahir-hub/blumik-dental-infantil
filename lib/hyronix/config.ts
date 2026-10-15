@@ -13,8 +13,9 @@ export const isSlug = (v: unknown): v is Slug =>
 export const routeFor = (slug: Slug) => (slug === 'home' ? '/' : '/' + slug);
 export const TIMEOUT_MS = 1200;
 export function revalidateSeconds() {
-  const value = Number(process.env.HYRONIX_CONTENT_REVALIDATE_SECONDS ?? 60);
-  if (!Number.isInteger(value) || value < 1 || value > 300)
+  // Events provide freshness; this TTL only recovers a missed delivery.
+  const value = Number(process.env.HYRONIX_CONTENT_REVALIDATE_SECONDS ?? 7200);
+  if (!Number.isInteger(value) || value < 1 || value > 7200)
     throw Error('INVALID_REVALIDATE_SECONDS');
   return value;
 }

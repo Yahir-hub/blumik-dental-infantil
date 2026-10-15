@@ -50,20 +50,24 @@ export async function loadResource(resource: string): Promise<Snapshot | null> {
   )
     return null;
   const started = Date.now();
+  let latest: Promise<Snapshot | null> | undefined;
   try {
     const store = snapshotStore();
-    const snapshot = await unstable_cache(
-      () => refreshSnapshot(base.href, key, resource, store),
+    // Start the authoritative read and KV read together. Reuse the same read
+    // on a cache miss/outage instead of issuing serial duplicate RPCs.
+    latest = store.get(key, resource).catch(() => null);
+    const cached = unstable_cache(
+      () => refreshSnapshot(base.href, key, resource, store, fetch, latest),
       ['hyronix-v2', base.href, key, resource],
       { revalidate: revalidateSeconds(), tags: tagsFor(key, resource) },
     )();
-    const latest = await store.get(key, resource);
-    return latest && latest.contentVersion > snapshot.contentVersion
-      ? latest
+    const [snapshot, current] = await Promise.all([cached, latest]);
+    return current && current.contentVersion > snapshot.contentVersion
+      ? current
       : snapshot;
   } catch {
     try {
-      const snapshot = await snapshotStore().get(key, resource);
+      const snapshot = await (latest ?? snapshotStore().get(key, resource));
       console.info(
         '[Hyronix]',
         JSON.stringify({
@@ -78,6 +82,9 @@ export async function loadResource(resource: string): Promise<Snapshot | null> {
       console.warn('[Hyronix store]', JSON.stringify({ route: resource, result: code }));
       return null;
     }
+  } finally {
+    if (process.env.HYRONIX_ENVIRONMENT === 'staging')
+      console.info('[Hyronix timing]', JSON.stringify({operation:'resource',resource,start:started,ms:Date.now()-started}));
   }
 }
 export async function prewarmResources(resources: string[]) {
