@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { seoDescriptions } from './seo';
 import { siteConfig } from './site-config';
+export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {

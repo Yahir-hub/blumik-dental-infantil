@@ -43,6 +43,11 @@ next-env.d.ts
 .qa-audit.json
 /.hyronix/
 /.open-next/
+/.hyronix-static/
+/.static-build/
+/.hyronix-static-build.json
+/public/published-media/
+/static-out/
 .dev.vars*
 
 !.env.production.example

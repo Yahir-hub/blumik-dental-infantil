@@ -3,15 +3,16 @@ import { guardEnvironment } from './scripts/guard-environment.mjs';
 guardEnvironment(process.env);
 
 const nextConfig: NextConfig = {
+  ...(process.env.HYRONIX_DELIVERY_MODE==='static'?{output:'export' as const,images:{unoptimized:true}}:{}),
   poweredByHeader: false,
   compress: true,
   turbopack: {
-    root: process.cwd(),
+    root: process.env.HYRONIX_BUILD_ROOT ?? process.cwd(),
     resolveAlias: ['staging','production'].includes(process.env.HYRONIX_ENVIRONMENT ?? '')
       ? { '@/lib/hyronix/local-store': './lib/hyronix/disabled-local-store.ts' }
       : {},
   },
-  async headers() {
+  headers: process.env.HYRONIX_DELIVERY_MODE==='static' ? undefined : async () => {
     return [
       {
         source: '/(.*)',

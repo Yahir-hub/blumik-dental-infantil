@@ -23,6 +23,8 @@
     "typeCheck": true
   },
   "ignorePatterns": [
+    ".static-build/**",
+    ".hyronix-static/**",
     ".next/**",
     ".vinext/**",
     "out/**",

@@ -40,6 +40,8 @@
     "**/*.mts"
   ],
   "exclude": [
+    ".static-build",
+    ".hyronix-static",
     ".open-next",
     ".wrangler",
     "node_modules"

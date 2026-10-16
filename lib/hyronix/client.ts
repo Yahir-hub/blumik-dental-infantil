@@ -7,6 +7,7 @@ import { isSlug, revalidateSeconds, tagsFor } from './config';
 import { snapshotStore } from './stores';
 import { refreshSnapshot } from './loader';
 import type { Snapshot } from './contracts';
+import { staticResource, staticMedia } from './static-content';
 
 export function apiOrigin() {
   // Runtime rollback switch; returns original JSX/settings/assets on all routes.
@@ -40,6 +41,7 @@ export function apiOrigin() {
   }
 }
 export async function loadResource(resource: string): Promise<Snapshot | null> {
+  if(process.env.HYRONIX_DELIVERY_MODE==='static')return staticResource(resource);
   const base = apiOrigin(),
     key = process.env.HYRONIX_SITE_KEY;
   if (
@@ -100,7 +102,7 @@ export async function prewarmResources(resources: string[]) {
 }
 export const getPublishedPage = cache(
   async (slug: string): Promise<Page | null> => {
-    await connection();
+    if(process.env.HYRONIX_DELIVERY_MODE!=='static')await connection();
     if (!isSlug(slug)) return null;
     const snapshot = await loadResource(slug);
     return snapshot && 'page' in snapshot.data ? snapshot.data.page : null;
@@ -108,7 +110,7 @@ export const getPublishedPage = cache(
 );
 export const getPublishedSettings = cache(
   async (): Promise<PublicSettings | null> => {
-    await connection();
+    if(process.env.HYRONIX_DELIVERY_MODE!=='static')await connection();
     const snapshot = await loadResource('settings');
     return snapshot && 'site_settings' in snapshot.data
       ? snapshot.data.site_settings
@@ -116,6 +118,7 @@ export const getPublishedSettings = cache(
   },
 );
 export function mediaUrl(path: string) {
+  if(process.env.HYRONIX_DELIVERY_MODE==='static')return staticMedia(path);
   const base = apiOrigin();
   // The controlled staging outage also exercises the existing image onError
   // fallback. This fixed fixture returns 503 and never accesses real media.
