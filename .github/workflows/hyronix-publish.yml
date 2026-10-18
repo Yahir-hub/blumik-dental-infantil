@@ -1,0 +1,58 @@
+name: Hyronix static publication
+on:
+  workflow_dispatch:
+    inputs:
+      attempt_id:
+        description: Durable Hyronix deployment attempt
+        required: true
+        type: string
+      target:
+        description: Authorized target
+        required: true
+        type: choice
+        options: [staging, production]
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: hyronix-static-${{ inputs.target }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/hyronix-zero-cost' && vars.HYRONIX_PIPELINE_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 23
+    environment: hyronix-${{ inputs.target }}
+    env:
+      HYRONIX_ATTEMPT_ID: ${{ inputs.attempt_id }}
+      HYRONIX_TARGET: ${{ inputs.target }}
+      HYRONIX_BUILD_COORDINATOR: ${{ vars.HYRONIX_BUILD_COORDINATOR }}
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - name: Checkout the exact dispatch commit from the authorized public repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_REPOSITORY" == 'Yahir-hub/blumik-dental-infantil' ]]
+          [[ "$GITHUB_SHA" =~ ^[a-f0-9]{40}$ ]]
+          git init .
+          git remote add origin https://github.com/Yahir-hub/blumik-dental-infantil.git
+          git fetch --depth=1 origin "$GITHUB_SHA"
+          git checkout --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4; no dependency cache
+        with:
+          node-version: '22.19.0'
+      - name: Authorize deployment intent with GitHub OIDC
+        run: node scripts/hosted-build.mjs authorize
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build and validate static published artifact
+        run: node scripts/hosted-build.mjs build
+      - name: Deploy verified assets and acknowledge version
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.BLUMIK_DEPLOY_TOKEN }}
+        run: node scripts/hosted-build.mjs deploy
+      - name: Preserve previous deployment on failure
+        if: failure()
+        run: node scripts/hosted-build.mjs failure
