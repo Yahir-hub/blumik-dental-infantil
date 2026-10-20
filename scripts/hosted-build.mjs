@@ -14,7 +14,7 @@ const json=async file=>JSON.parse(await readFile(file,'utf8'));
 const api=async(action,extra={})=>{
  // OIDC is minted per step; no Supabase secret, reusable JWT or DB lease enters CI.
  const url=new URL(process.env.ACTIONS_ID_TOKEN_REQUEST_URL);
- assert.ok(url.protocol==='https:'&&/\.actions\.githubusercontent\.com$/.test(url.hostname),'OIDC_ENDPOINT');
+ assert.ok(url.protocol==='https:'&&url.hostname.endsWith('.actions.githubusercontent.com'),'OIDC_ENDPOINT');
  url.searchParams.set('audience',coordinator);
  const issued=await fetch(url,{headers:{Authorization:'Bearer '+process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN},redirect:'error',signal:AbortSignal.timeout(15000)});
  assert.ok(issued.ok,'OIDC_UNAVAILABLE');const {value}=await issued.json();assert.equal(typeof value,'string');
@@ -40,6 +40,7 @@ try{
    HYRONIX_BUILD_CONTENT_VERSION:String(job.contentVersion),HYRONIX_ENVIRONMENT:target};
   // Never pass identity or provider credentials to build code or generated content.
   for(const key of Object.keys(env))if(/TOKEN|SECRET|PASSWORD|COOKIE|AUTHORIZATION/.test(key))delete env[key];
+  run(['node_modules/next/dist/bin/next','typegen'],env);
   run(['node_modules/oxlint/bin/oxlint'],env);run(['node_modules/typescript/bin/tsc','--noEmit'],env);
   run(['scripts/build-static.mjs'],env);
   const artifact=await json('.hyronix-static-build.json');assert.equal(artifact.contentVersion,job.contentVersion);
