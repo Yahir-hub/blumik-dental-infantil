@@ -72,7 +72,10 @@ try{
   else{
    let started=false;try{await readFile('.hosted-deploy-started.json');started=true;}catch(error){if(error.code!=='ENOENT')throw error;}
    if(started)throw Error('DEPLOY_RECONCILIATION_REQUIRED');
-   assert.equal((await api('finish',{failure:'build_failed'})).ok,true);
+   // A newer publication can invalidate the content version during export.
+   // Release that obsolete attempt as superseded so the latest intent proceeds.
+   const failure=(await api('can_commit')).ok?'build_failed':'version_changed';
+   assert.equal((await api('finish',{failure})).ok,true);
   }
  }else throw Error('INVALID_PHASE');
 }catch(error){console.error(['CONTROLLED_STAGING_BUILD_FAILURE','DEPLOY_RECONCILIATION_REQUIRED','ACK_RECONCILIATION_REQUIRED'].includes(error.message)?error.message:'HOSTED_BUILD_FAILED');process.exitCode=1;}
